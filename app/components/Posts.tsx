@@ -15,10 +15,9 @@ async function Posts() {
       <div className="w-2/4 mx-auto mt-10">
          <h2 className="text-white text-2xl font-bold">My Posts</h2>
          <ul className="mt-4">
-            {/* {postsMeta.map((postMeta, index) => (
+            {postsMeta.map((postMeta, index) => (
                <ListItem postMeta={postMeta} key={index}/>
-            ))} */}
-            {JSON.stringify(postsMeta)}
+            ))}
          </ul>
       </div>
    );

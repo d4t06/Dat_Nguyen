@@ -4,12 +4,12 @@ import ListItem from "./ListItem";
 import getAllUser from "@/libs/getAllUser";
 
 async function Posts() {
-   // const postsMeta = await getPostsMeta();
-   const allUser = await getAllUser();
+   const postsMeta = await getPostsMeta();
+   // const allUser = await getAllUser();
 
    // console.log("check postsMeta", postsMeta)
 
-   if (!allUser) return <p className="mt-10 text-white text-center">No posts available.{process.env.GITHUB_TOKEN}</p>
+   if (!postsMeta) return <p className="mt-10 text-white text-center">No posts available.{process.env.GITHUB_TOKEN}</p>
 
    return (
       <div className="w-2/4 mx-auto mt-10">
@@ -18,7 +18,7 @@ async function Posts() {
             {/* {postsMeta.map((postMeta, index) => (
                <ListItem postMeta={postMeta} key={index}/>
             ))} */}
-            {JSON.stringify(allUser)}
+            {JSON.stringify(postsMeta)}
          </ul>
       </div>
    );

@@ -17,7 +17,7 @@ export async function getPostByName(
       {
          headers: {
             Accept: "application/vnd.github+json",
-            Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+            Authorization: `Bearer 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`,
             "X-GitHub-Api-Version": "2022-11-28",
          },
       }
@@ -66,7 +66,7 @@ export async function getPostByName(
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
    const res = await fetch(
-      "https://api.github.com/repos/d4t06/learn-nextjs-blogposts/git/trees/master",
+      "https://api.github.com/repos/d4t06/learn-nextjs-blogposts/git/trees/master?recursive=1",
       {
          headers: {
             Accept: "application/vnd.github+json",

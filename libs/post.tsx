@@ -12,22 +12,10 @@ export async function getPostByName(
    // console.log("check file name", fileName);
 
    const res = await fetch(
-      `https://raw.githubusercontent.com/d4t06/learn-nextjs-blogposts/master/${fileName}`,
-      {
-         headers: {
-            Accept: "application/vnd.github+json",
-            Authorization: `Bearer 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`,
-            "X-GitHub-Api-Version": "2022-11-28",
-         },
-         // cache: "no-cache",
-      }
+      `https://raw.githubusercontent.com/d4t06/learn-nextjs-blogposts/master/${fileName}`
    );
 
-   if (!res.ok) {
-      // throw new Error()
-      // console.log(res);
-      return undefined;
-   }
+   if (!res.ok) return undefined;
 
    const rawMdx = await res.text();
 
@@ -67,15 +55,7 @@ export async function getPostByName(
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
    const res = await fetch(
-      "https://api.github.com/repos/d4t06/learn-nextjs-blogposts/git/trees/master?recursive=1",
-      {
-         headers: {
-            Accept: "application/vnd.github+json",
-            Authorization: `Bearer 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`,
-            "X-GitHub-Api-Version": "2022-11-28",
-         },
-         // cache: "no-cache",
-      }
+      "https://api.github.com/repos/d4t06/learn-nextjs-blogposts/git/trees/master?recursive=1"
    );
 
    if (!res.ok) return undefined;

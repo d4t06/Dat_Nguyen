@@ -9,9 +9,8 @@ type Filetree = {
 export async function getPostByName(
    fileName: string
 ): Promise<BlogPost | undefined> {
-
    // console.log("check file name", fileName);
-   
+
    const res = await fetch(
       `https://raw.githubusercontent.com/d4t06/learn-nextjs-blogposts/master/${fileName}`,
       {
@@ -23,7 +22,10 @@ export async function getPostByName(
       }
    );
 
-   if (!res.ok) return undefined;
+   if (!res.ok) {
+      console.log(res);
+      return undefined;
+   }
 
    const rawMdx = await res.text();
 
@@ -36,12 +38,12 @@ export async function getPostByName(
    }>({
       source: rawMdx,
       components: {
-         Video, 
+         Video,
          CustomImage,
       },
       options: {
          parseFrontmatter: true,
-      }
+      },
    });
 
    const id = fileName.replace(/\.mdx$/, "");
@@ -57,11 +59,8 @@ export async function getPostByName(
    };
 
    // console.log("check post ", blogPostObj);
-   
 
    return blogPostObj;
-
-   
 }
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
@@ -76,28 +75,24 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
       }
    );
 
-   
    if (!res.ok) return undefined;
 
    const repoFiletree: Filetree = await res.json();
 
    // console.log("check tree", repoFiletree);
 
-
    const fileNameArray = repoFiletree.tree
       .map((obj) => obj.path)
       .filter((path) => path.endsWith(".mdx"));
 
-
-      // console.log("check filesArray", fileNameArray);
-      
+   // console.log("check filesArray", fileNameArray);
 
    const posts: Meta[] = [];
 
    for (const fileName of fileNameArray) {
       const post = await getPostByName(fileName);
       if (post) {
-         const {meta} = post;
+         const { meta } = post;
          posts.push(meta);
       }
    }

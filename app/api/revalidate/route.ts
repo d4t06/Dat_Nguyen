@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 export function GET(req: NextRequest) {
    const  secret = req.nextUrl.searchParams.get('secret')
 
-   if (secret !== process.env.MY_SECRET_TOKEN) {
+   if (secret !== 'DatDevWeb') {
       return new NextResponse(JSON.stringify({message: "Invalid token"}), {
          status: 401,
          statusText: 'Unauthorized',

@@ -22,5 +22,5 @@ GET https://raw.githubusercontent.com/d4t06/learn-nextjs-blogposts/master/react-
    }
 
 ###
-GET http://localhost:3000/api/revalidate?path=/&secret=DatDevWeb
+GET https://nextjs-blog-sigma-lilac-50.vercel.app/api/revalidate?path=/&secret=DatDevWeb
 

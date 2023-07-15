@@ -19,11 +19,13 @@ export async function getPostByName(
             Authorization: `Bearer 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`,
             "X-GitHub-Api-Version": "2022-11-28",
          },
+         // cache: "no-cache",
       }
    );
 
    if (!res.ok) {
-      console.log(res);
+      // throw new Error()
+      // console.log(res);
       return undefined;
    }
 
@@ -72,6 +74,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
             Authorization: `Bearer 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`,
             "X-GitHub-Api-Version": "2022-11-28",
          },
+         // cache: "no-cache",
       }
    );
 

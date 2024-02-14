@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { githubIcon, linkedinIcon, ubuntuIcon, wordpressIcon } from "../../public/icon";
+import { githubIcon, linkedinIcon, ubuntuIcon } from "../../public/icon";
 // import Search from "./Search";
 
 function Navbar() {
@@ -16,11 +16,6 @@ function Navbar() {
                   <li>
                      <Link className="h-10 w-10 block" href={"/"}>
                            {githubIcon}
-                     </Link>
-                  </li>
-                  <li>
-                     <Link className="h-10 w-10 block" href={"/"}>
-                           {wordpressIcon}
                      </Link>
                   </li>
                   <li>

@@ -5,10 +5,10 @@ import { Metadata } from "next";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
-   title: "Dat's blog posts",
-   description: "Create by Dat"
-}
+   export const metadata: Metadata = {
+      title: "Dat's blog posts",
+      description: "Create by Dat"
+   }
 
 export default function Home() {
    return (

@@ -57,7 +57,7 @@ management system"
 				/>
 				<ProjectItem
 					reverse
-					demoLink="https://next-mp3.app"
+					demoLink="https://next-mp3.vercel.app"
 					gitLink="https://github.com/d4t06/Next-MP3"
 					iamgePath="/images/projects/next-mp3.png"
 					desc="Simple music player with live lyrics using Next.js"

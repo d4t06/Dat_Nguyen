@@ -1,8 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Video from "@/app/components/Video";
 import CustomImage from "@/app/components/CustomImage";
+import Video from "@/app/components/Video";
+import CustomMDXComponents from "@/app/components/mdx/MDXComponents";
 
 const postDirectory = path.join(process.cwd(), "blogposts");
 
@@ -14,15 +15,12 @@ export async function getPostByName(fileName: string) {
    const fullPath = path.join(postDirectory, fileName);
    const fileContent = fs.readFileSync(fullPath, "utf-8");
 
-   const { frontmatter, content } = await compileMDX<{
-      title: string;
-      date: string;
-      tags: string[];
-   }>({
+   const { frontmatter, content } = await compileMDX<Meta>({
       source: fileContent,
       components: {
-         Video, 
+         Video,
          CustomImage,
+         ...CustomMDXComponents,
       },
       options: {
          parseFrontmatter: true,
@@ -37,14 +35,16 @@ export async function getPostByName(fileName: string) {
          title: frontmatter.title,
          date: frontmatter.date,
          tags: frontmatter.tags,
+         image: frontmatter.image || "",
       },
       content,
+      rawContent: fileContent,
    };
 
    return blogPostObj;
 }
 
-export async function getPostsMeta() {
+export default async function getLocalPosts() {
    const fileNameArray = fs.readdirSync(postDirectory);
 
    if (!fileNameArray.length) return undefined;
@@ -54,24 +54,10 @@ export async function getPostsMeta() {
    for (const fileName of fileNameArray) {
       const post = await getPostByName(fileName);
       if (post) {
-         const {meta} = post;
+         const { meta } = post;
          postsMeta.push(meta);
       }
    }
-
-   // const postsMeta = fileNameArray.map(async (fileName) => {
-   //    if (fileName.endsWith(".mdx")) {
-   //       const post = await getPostByName(fileName);
-
-   //       if (post) {
-   // console.log("check get post by name", post);
-
-   //          const { meta } = post;
-   //          return meta;
-   //       }
-   //    }
-   // });
-   // console.log("check postsMeta", postsMeta);
 
    return postsMeta;
 }

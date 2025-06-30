@@ -7,12 +7,12 @@ export const revalidate = 86400;
 export default function Home() {
    return (
       <div className="flex flex-col flex-grow lg:flex-row items-center lg:justify-center">
-         <div className="w-[30vh] flex-shrink-0 lg:w-[400px]">
+         <div className="w-[40vw] flex-shrink-0 md:w-[300px] lg:w-[350px]">
             <Image
                className="rounded-full w-full"
                src="/images/my_avatar.jpg"
-               width={400}
-               height={400}
+               width={350}
+               height={350}
                alt="Dat"
             />
          </div>
@@ -36,9 +36,18 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center space-x-10 mt-7 [&_a]:w-10 [&_a]:transition-[color] hover:[&_a]:text-red-500">
-               <Link href={"/"}>{githubIcon}</Link>
-               <Link href={"/"}>{fbIcon}</Link>
-               <Link href={"/"}>{linkedinIcon}</Link>
+               <Link target="_blank" href={"https://github.com/d4t06"}>
+                  {githubIcon}
+               </Link>
+               <Link target="_blank" href={"https://www.facebook.com/DAtdz06"}>
+                  {fbIcon}
+               </Link>
+               <Link
+                  target="_blank"
+                  href={"https://www.linkedin.com/in/dat-nguyen-huu-9371a926a"}
+               >
+                  {linkedinIcon}
+               </Link>
             </div>
          </div>
       </div>

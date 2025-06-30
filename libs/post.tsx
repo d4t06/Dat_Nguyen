@@ -7,19 +7,12 @@ type Filetree = {
 };
 
 export async function getPostByName(
-   fileName: string
+   fileName: string,
 ): Promise<BlogPost | undefined> {
    // console.log("check file name", fileName);
 
    const res = await fetch(
-      `https://raw.githubusercontent.com/d4t06/learn-nextjs-blogposts/master/${fileName}`,
-      // {
-      //    headers: {
-      //       Accept: "application/vnd.github+json",
-      //       Authorization: `Bearer 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`,
-      //       "X-GitHub-Api-Version": "2022-11-28",
-      //    },
-      // }
+      `https://raw.githubusercontent.com/d4t06/Dat_Nguyen_Resource/master/${fileName}`,
    );
 
    if (!res.ok) return undefined;
@@ -51,29 +44,19 @@ export async function getPostByName(
          title: frontmatter.title,
          date: frontmatter.date,
          tags: frontmatter.tags,
+         image: "",
       },
       content,
+      rawContent: rawMdx,
    };
-
-   // console.log("check post ", blogPostObj);
 
    return blogPostObj;
 }
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
    const res = await fetch(
-      "https://api.github.com/repos/d4t06/learn-nextjs-blogposts/git/trees/master?recursive=1",
-      // {
-      //    headers: {
-      //       Accept: "application/vnd.github+json",
-      //       Authorization: `Bearer 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`,
-      //       "X-GitHub-Api-Version": "2022-11-28",
-      //    },
-      // }
+      "https://api.github.com/repos/d4t06/Dat_Nguyen_Resource/git/trees/master?recursive=1",
    );
-
-   // console.log("check res", res);
-   
 
    if (!res.ok) return undefined;
 

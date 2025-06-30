@@ -1,0 +1,45 @@
+---
+title: "Bash"
+date: "7-14-2025"
+tags: ["bash", "cmd"]
+image: "/images/notes/bash.png"
+---
+
+#### check wake up devide
+
+```
+powercfg -devicequery wake_armed
+```
+
+#### install custom fonts
+
+~/.local/share/fonts 
+
+#### format partion in cmd
+
+```
+format v: /fs:fat32
+```
+
+#### rebuild uefi partiton
+
+```shell
+bcdboot c:\Windows /s <boot letter>: /f UEFI\
+```
+
+#### Add bash alias
+
+make alias permanent change file "~/.bash_profile"
+
+#### kill running process at specific port
+
+```
+fuser -k 8080/tcp
+```
+
+#### List installed packed
+
+```
+dpkg -l | grep -i my-package
+sudo apt remove my-app
+```

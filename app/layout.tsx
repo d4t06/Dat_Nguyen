@@ -15,10 +15,9 @@ export default function RootLayout({
       <html lang="en">
          <head />
          <body className="bg-white dark:bg-slate-800 dark:text-white">
-            <div className="min-h-screen container mx-auto  flex flex-col">
+            <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
                <Navbar />
                {children}
-
                <Footer />
             </div>
          </body>

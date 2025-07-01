@@ -15,7 +15,7 @@ export default function NoteItem({ postMeta }: { postMeta: Meta }) {
                />
             </div>
          </div>
-         <div className="px-3 py-5 bg-white dark:bg-slate-900">
+         <div className="px-3 py-4 bg-white dark:bg-slate-900">
             <p className="text-2xl font-bold">{title}</p>
             <div className="flex gap-2 mt-3">
                {!!postMeta.tags &&

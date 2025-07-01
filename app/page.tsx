@@ -25,14 +25,17 @@ export default function Home() {
             </div>
 
             <div className="text-xl r lg:text-2xl font-semibold mt-3">
-               <div>I&apos;m a full-stack developer.</div>
+               <div>I&apos;m a student at Can Tho University.</div>
                <div>I build things for the web.</div>
             </div>
 
             <div className="px-4 [&_p]:p-3 text-xl mt-3">
                <p>🏢 &nbsp; Can Tho, Viet Nam</p>
                <p>💖 &nbsp; ReactJS, TailwindCSS</p>
-               <p>✉️ &nbsp; datnh0708@gmail.com</p>
+               <p>
+                  ✉️ &nbsp;
+                  <Link href={"mailto:datnh0708@gmail.com"}>datnh0708@gmail.com</Link>
+               </p>
             </div>
 
             <div className="flex items-center justify-center space-x-10 mt-7 [&_a]:w-10 [&_a]:transition-[color] hover:[&_a]:text-red-500">

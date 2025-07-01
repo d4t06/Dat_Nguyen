@@ -13,17 +13,17 @@ type Props = {
    };
 };
 
-export async function generateStaticParams() {
-   const postsMeta = await getLocalPosts();
+// export async function generateStaticParams() {
+//    const postsMeta = await getLocalPosts();
 
-   if (!postsMeta) return [];
+//    if (!postsMeta) return [];
 
-   return postsMeta.map((postMeta) => {
-      return {
-         noteId: postMeta.id,
-      };
-   });
-}
+//    return postsMeta.map((postMeta) => {
+//       return {
+//          noteId: postMeta.id,
+//       };
+//    });
+// }
 
 export async function generateMetadata({ params }: Props) {
    const post = await getPostByName(`${params.noteId}.mdx`);

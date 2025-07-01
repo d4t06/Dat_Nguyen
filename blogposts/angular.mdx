@@ -1,0 +1,113 @@
+---
+title: "Angular"
+date: "7-1-2025"
+tags: ["Angular"]
+image: "/images/notes/angular.png"
+---
+
+
+## Notes
+
+- Dom events accept an function call instead of a callback
+
+- Can access child component through @viewChild() decorator
+
+
+## Access 'this' key work in  callback function
+
+- Use bind() method:
+```
+window.addEventListener("mousedown", this.handleClickOutside.bind(this));
+```
+- Use arrow function:
+```
+  handleClickOutside = (e: Event) => {}
+```
+
+## Directive
+
+```
+<ng-content/> can only exist once
+<ng-template #projected>
+  <ng-content/>
+</ng-template>
+
+<div *ngIf="template === '1'">
+  <ng-container *ngTemplateOutlet="projected" />
+</div>
+
+<div *ngIf="template === '2'">
+  <ng-container *ngTemplateOutlet="projected" />
+</div>
+```
+
+
+## Lifecycle Hooks
+
+### Constructor
+
+- When constructor is called, by that time, input properties are not updated
+
+- When constructor is called, by that time, the child constructor are not called
+
+- The content of component not available by the time constructor called
+
+### ngOnChanges
+
+- First time run for all **@Input()**, and then run whenever  input variable changed
+
+- The first ngOnChanges runs before ngOnInit.
+
+- For primitive variables
+
+### ngOnInit
+
+- Run once
+
+- Run before before every time angular check component template changes
+- Use for initialize variables, call api
+
+### ngDoCheck
+
+- 1st: Run to check if component has ngOnChanges or not
+
+- 2nd: Run if component has ngOnChanges
+
+
+- 3rd…: Input variables
+
+- For primitive and non-primitive variables
+
+- One of the use cases is use to get elementRef of conditional element
+
+### ngAfterContentInit
+- Call once after first ngDoCheck
+
+- Called after components external content (ng-content...) has been initialized.
+
+- ngAfterContentChecked
+
+- Run whenever input variables changes
+
+### ngAfterViewInit
+
+- Respond after Angular initializes the component's views and child views
+
+### ngAfterViewChecked
+
+
+
+### ngOnDestroy
+
+## ElementRef
+
+```
+<input type="text" #usernameInput />
+<button (click)="handleClick(usernameInput)">Click</button>
+```
+
+- Use **@Viewchild()** to access element
+
+```
+@ViewChild('usernameInput', {static: true}) usernameInput: ElementRef;
+```

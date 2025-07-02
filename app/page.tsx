@@ -2,17 +2,19 @@ import { fbIcon, githubIcon, linkedinIcon } from "@/public/icon";
 import Image from "next/image";
 import Link from "next/link";
 
-export const revalidate = 86400;
+export const metadata = {
+   title: "Dat Nguyen",
+};
 
 export default function Home() {
    return (
-      <div className="flex flex-col flex-grow lg:flex-row items-center lg:justify-center">
-         <div className="w-[40vw] flex-shrink-0 md:w-[300px] lg:w-[350px]">
+      <div className="flex flex-col flex-grow lg:flex-row items-center lg:justify-center min-h-[calc(100vh-120px-60px)] md:min-h-[unset]">
+         <div className="w-[40vw] flex-shrink-0 md:w-[300px]">
             <Image
                className="rounded-full w-full"
                src="/images/my_avatar.jpg"
-               width={350}
-               height={350}
+               width={300}
+               height={300}
                alt="Dat"
             />
          </div>
@@ -34,7 +36,9 @@ export default function Home() {
                <p>💖 &nbsp; ReactJS, TailwindCSS</p>
                <p>
                   ✉️ &nbsp;
-                  <Link href={"mailto:datnh0708@gmail.com"}>datnh0708@gmail.com</Link>
+                  <Link href={"mailto:datnh0708@gmail.com"}>
+                     datnh0708@gmail.com
+                  </Link>
                </p>
             </div>
 

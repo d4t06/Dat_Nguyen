@@ -1,3 +1,4 @@
+import OtherProjectItem from "./_components/OtherProjectItem";
 import ProjectItem from "./_components/ProjectItem";
 
 export default function ProjectsPage() {
@@ -34,7 +35,13 @@ information about notebooks, smartphones and tablet"
 					iamgePath="/images/projects/hd-player.png"
 					desc="Simple music player with live lyrics"
 					name="HD Player"
-					tech={["React", "Express", "Sequelize ORM", "Tailwind CSS", "MySQL"]}
+					tech={[
+						"React",
+						"Express",
+						"Sequelize ORM",
+						"Tailwind CSS",
+						"MySQL",
+					]}
 				/>
 
 				<ProjectItem
@@ -45,7 +52,13 @@ information about notebooks, smartphones and tablet"
 					desc="Modern e-commerce website with a user-friendly UI and powerful
 management system"
 					name="HD Mobile"
-					tech={["React", "Express", "Sequelize ORM", "Tailwind CSS", "MySQL"]}
+					tech={[
+						"React",
+						"Express",
+						"Sequelize ORM",
+						"Tailwind CSS",
+						"MySQL",
+					]}
 				/>
 
 				<ProjectItem
@@ -55,7 +68,13 @@ management system"
 					desc="Modern e-commerce website with a user-friendly UI and powerful
 management system"
 					name="HD Chat"
-					tech={["React", "Express", "Sequelize ORM", "Tailwind CSS", "MySQL"]}
+					tech={[
+						"React",
+						"Express",
+						"Sequelize ORM",
+						"Tailwind CSS",
+						"MySQL",
+					]}
 				/>
 
 				<ProjectItem
@@ -65,11 +84,57 @@ management system"
 					iamgePath="/images/projects/next-mp3.png"
 					desc="Simple music player with live lyrics using Next.js"
 					name="Next MP3 "
-					tech={["Next.js", "TailwindCSS", "NestJS", "MySQL"]}
+					tech={["Next.js", "Tailwind CSS", "NestJS", "MySQL"]}
 				/>
 
 				<div className="text-2xl text-center font-semibold mt-10">
-					I also build things with Nuxt.js, Angular, ...
+					Other Noteworthy Projects
+				</div>
+
+				<div className="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
+					<OtherProjectItem
+						demoLink="https://github.com/d4t06/Argo-Store-React-Native"
+						desc="Grocery store management built with React Native"
+						gitLink="https://github.com/d4t06/Argo-Store-React-Native"
+						name="Argo Store"
+						tech={[
+							"React Native",
+							"Expo",
+							"Tailwind CSS",
+							"Firebase",
+						]}
+					/>
+
+					<OtherProjectItem
+						demoLink="https://nuxt-mobile.netlify.app"
+						gitLink="https://github.com/d4t06/Nuxt-Mobile"
+						desc="Laptop, Tablet and Smartphone reviews application with aim is to provide information about notebooks, smartphones and tablet"
+						name="Nuxt Mobile"
+						tech={["Nuxt", "Tailwind CSS"]}
+					/>
+					<OtherProjectItem
+						demoLink="https://nuxt-mp3.netlify.app"
+						desc="Modern music player application with live lyrics and karaoke functionality and many other things..."
+						gitLink="https://github.com/d4t06/Nuxt-MP3"
+						name="Nuxt MP3"
+						tech={["Nuxt", "Tailwind CSS"]}
+					/>
+
+					<OtherProjectItem
+						demoLink="https://d4t06.github.io/react-ui"
+						desc="Reuse react components"
+						gitLink="https://github.com/d4t06/react-ui"
+						name="React UI"
+						tech={["React", "Tailwind CSS"]}
+					/>
+
+					<OtherProjectItem
+						demoLink="https://github.com/d4t06/OpenCore-Dell_5270"
+						desc="Opencore EFI MacOS 10.15 Catalina for Dell 5270 laptop"
+						gitLink="https://github.com/d4t06/OpenCore-Dell_5270"
+						name="Hackintosh"
+						tech={["Opencore"]}
+					/>
 				</div>
 			</div>
 		</>

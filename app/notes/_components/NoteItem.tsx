@@ -5,7 +5,10 @@ export default function NoteItem({ postMeta }: { postMeta: Meta }) {
    const { id, title, image } = postMeta;
 
    return (
-      <Link href={`/notes/${id}`} className="hover:md:scale-[1.05] transition-transform rounded-xl border border-black dark:border-white overflow-hidden">
+      <Link
+         href={`/notes/${id}`}
+         className="transition-transform rounded-xl border border-black dark:border-white overflow-hidden hover:translate-y-2"
+      >
          <div className="pt-[30%] relative">
             <div className="absolute inset-0 dark:bg-white">
                <CustomImage

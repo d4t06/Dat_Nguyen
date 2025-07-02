@@ -9,7 +9,7 @@ async function Posts() {
 
 	return (
 		<div className="md:flex-grow mt-10">
-			<div className="grid grid-cols-1 gap-8 mt-4 sm:grid-cols-2 lg:grid-cols-3">
+			<div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 lg:grid-cols-3">
 				{postsMeta.map((p, i) => (
 					<NoteItem key={i} postMeta={p} />
 				))}

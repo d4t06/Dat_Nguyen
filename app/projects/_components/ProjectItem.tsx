@@ -35,8 +35,8 @@ export default function ProjectItem({
 					<Image
 						alt=""
 						className="w-full"
-						width={950}
-						height={950}
+						width={700}
+						height={700}
 						src={iamgePath}
 					/>
 				</div>
@@ -45,7 +45,7 @@ export default function ProjectItem({
 				>
 					<div className="text-2xl lg:text-3xl font-bold">{name}</div>
 
-					<div className="p-3 lg:p-5 lg:text-lg border bg-white	border-black dark:border-white rounded-md text-black text-left dark:bg-slate-900 dark:text-white">
+					<div className="p-3 lg:p-5 lg:text-lg border bg-white	border-black rounded-md text-black text-left dark:bg-slate-900 dark:text-white">
 						{desc}
 					</div>
 

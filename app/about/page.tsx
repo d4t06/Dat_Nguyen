@@ -2,7 +2,7 @@ import Frame from "./_components/Frame";
 
 export default function AboutPage() {
 	return (
-		<div className="mt-10  space-y-10 md:space-y-24 text-white">
+		<div className="page mt-10  space-y-10 md:space-y-24 text-white">
 			<Frame>
 				<p>
 					<span className="text-purple-400">datnguyen $</span>
@@ -14,13 +14,12 @@ export default function AboutPage() {
 					Hello! I&apos;m Dat Nguyen
 					<br />
 					<br />
-					I&apos;m a highly motivated final-year Software Engineering
-					student at
-					<strong>Can Tho University</strong> with a strong passion
-					for web technologies seeking an internship opportunity.
+					I&apos;m a highly motivated final-year Software Engineering student at
+					<strong> Can Tho University</strong> with a strong passion for web
+					technologies seeking an internship opportunity.
 					<br />
-					<br />I am currently living Can Tho, Viet Nam and available
-					for any kind of job opportunities that suit my interests.
+					<br />I am currently living Can Tho, Viet Nam and available for any
+					kind of job opportunities that suit my interests.
 				</p>
 			</Frame>
 
@@ -83,10 +82,7 @@ export default function AboutPage() {
 				<p>Intern front-end developer | AI CREATIVE CO., LTD</p>
 
 				<br />
-				<p>
-					Developed a responsive front-end website using WordPress and
-					SCSS
-				</p>
+				<p>Developed a responsive front-end website using WordPress and SCSS</p>
 			</Frame>
 		</div>
 	);

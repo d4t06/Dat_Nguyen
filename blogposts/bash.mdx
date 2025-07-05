@@ -4,6 +4,13 @@ date: "7-14-2025"
 tags: ["bash", "cmd"]
 image: "/images/notes/bash.png"
 ---
+#### group
+
+- add user to group
+
+```
+sudo usermod -aG group user
+```
 
 #### check wake up devide
 
@@ -20,6 +27,16 @@ powercfg -devicequery wake_armed
 - Extract and move app folde to /opt
 
 - Create app.desktop at /usr/share/applications
+
+```
+[Desktop Entry]
+Name=Firefox Developer Edition
+Comment=Web Browser
+Exec=/opt/firefox/firefox %u   
+Icon=/opt/firefox/browser/chrome/icons/default/default128.png
+Terminal=false
+Type=Application
+```
 
 #### install nodejs
 

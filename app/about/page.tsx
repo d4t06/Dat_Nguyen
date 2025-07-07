@@ -14,12 +14,16 @@ export default function AboutPage() {
 					Hello! I&apos;m Dat Nguyen
 					<br />
 					<br />
-					I&apos;m a highly motivated final-year Software Engineering student at
-					<strong> Can Tho University</strong> with a strong passion for web
-					technologies seeking an internship opportunity.
+					I&apos;m a final-year Software Engineering student at Can Tho
+					University with a strong passion for web technologies seeking an job
+					opportunity.
 					<br />
 					<br />I am currently living Can Tho, Viet Nam and available for any
 					kind of job opportunities that suit my interests.
+					<br />
+					<br />
+					Download&nbsp;
+					<a href="Nguyen_Huu_Dat.pdf" download className="underline">my CV</a>
 				</p>
 			</Frame>
 

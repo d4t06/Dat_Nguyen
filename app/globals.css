@@ -5,8 +5,8 @@
 /* Fallback for browsers that don't support variable fonts */
 @font-face {
   font-family: "abc";
-  src: url("/JetBrainsMono-Medium") format("truetype"); /* Static bold font */
-  font-weight: 500;
+  src: url("/JetBrainsMono-Regular") format("truetype"); /* Static bold font */
+  font-weight: 400;
   font-display: swap;
 }
 

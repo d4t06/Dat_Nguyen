@@ -12,7 +12,7 @@ export default function NoteItem({ postMeta }: { postMeta: Meta }) {
          <div className="pt-[30%] relative">
             <div className="absolute inset-0 dark:bg-white">
                <CustomImage
-                  className="h-full w-auto mx-auto object-cover"
+                  className="h-full w-full mx-auto object-cover"
                   alt=""
                   src={image}
                />

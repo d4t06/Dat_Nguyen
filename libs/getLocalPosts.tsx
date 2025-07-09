@@ -4,6 +4,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import CustomImage from "@/app/components/CustomImage";
 import Video from "@/app/components/Video";
 import CustomMDXComponents from "@/app/components/mdx/MDXComponents";
+import remarkGfm from "remark-gfm";
 
 const postDirectory = path.join(process.cwd(), "blogposts");
 
@@ -24,6 +25,9 @@ export async function getPostByName(fileName: string) {
       },
       options: {
          parseFrontmatter: true,
+         mdxOptions: {
+            remarkPlugins: [remarkGfm],
+         },
       },
    });
 

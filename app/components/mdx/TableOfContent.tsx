@@ -24,10 +24,10 @@ export default function TableOfContent({ content }: Props) {
 	};
 
 	return (
-		<div className="w-full md:w-1/4 p-3 rounded-lg md:sticky md:left-0 md:top-24 ">
+		<div className="w-full md:w-1/4 p-3  rounded-lg md:fixed overflow-hidden md:bottom-0 md:left-0 md:top-24 flex flex-col pb-10">
 			<div className="font-semibold text-2xl">Table of contents</div>
 
-			<div className="mt-5 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5  [&_a]:rounded space-y-1 ">
+			<div className="flex-grow overflow-auto mt-5 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5  [&_a]:rounded space-y-1 ">
 				{tableOfContents.map((t, i) => (
 					<Link
 						key={i}

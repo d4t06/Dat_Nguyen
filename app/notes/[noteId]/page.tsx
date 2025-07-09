@@ -57,7 +57,9 @@ export default async function Page({ params }: Props) {
                {meta.image && (
                   <div className="rounded-md mb-3 overflow-hidden aspect-[4/1] dark:bg-white">
                      <CustomImage
-                        className="h-full object-cover w-auto m-auto"
+                        width={700}
+                        height={300}
+                        className="h-full object-cover w-full m-auto"
                         alt="image"
                         src={meta.image}
                      />
@@ -69,9 +71,9 @@ export default async function Page({ params }: Props) {
                <br />
 
                <NoteIdWrapper>
-                  <article className="prose prose-sm md:prose-base prose-slate dark:prose-invert">
+                  <div className="prose prose-sm max-w-[unset] md:prose-base prose-slate dark:prose-invert [&_img]:mx-auto">
                      {content}
-                  </article>
+                  </div>
                </NoteIdWrapper>
             </div>
          </div>

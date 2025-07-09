@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Props = {
    src: string;
-   alt: string;
+   alt?: string;
    width?: number;
    height?: number;
    className?: string;
@@ -10,7 +10,7 @@ type Props = {
 
 export default function CustomImage({
    src,
-   alt,
+   alt = "this is a image",
    height = 500,
    width = 500,
    className = "",

@@ -32,9 +32,9 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - Socket amd ít thay đổi hơn, hổ trợ nâng cấp lâu dài
 
-AM4: Supported multiple generations of AMD Ryzen CPUs (e.g., Ryzen 1000 to Ryzen 5000 series).
+- AM4: Supported multiple generations of AMD Ryzen CPUs (e.g., Ryzen 1000 to Ryzen 5000 series).
 
-AM5: The current socket for AMD Ryzen 7000 series and newer CPUs
+- AM5: The current socket for AMD Ryzen 7000 series and newer CPUs
 
 ## CPU
 
@@ -58,9 +58,12 @@ AM5: The current socket for AMD Ryzen 7000 series and newer CPUs
 
 ### Fan sync
 
-<CustomImage src="/images/notes/pc-things/pc_sync_fan.jpg" width={400} height={400}/>
+<div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
+    <ImageFigure text="PC with sync led" src="/images/notes/pc-things/pc_sync_fan.jpg" width={400} height={400}/>
+    <ImageFigure text="6pin fan" src="/images/notes/pc-things/fan_6pin.jpg" width={400} height={400}/>
+</div>
 
-<CustomImage src="/images/notes/pc-things/fan_6pin.jpg" width={400} height={400}/>
+
 
 - Mortherboard phải có Main Sync
 
@@ -70,82 +73,105 @@ AM5: The current socket for AMD Ryzen 7000 series and newer CPUs
 
 - Trong trường hợp cắp nhiều quạt mà main không đủ socket thì cần phải mua thêm hub
 
-<CustomImage src="/images/notes/pc-things/hub.jpg" width={700} height={400}/>
-
-
 
 ### Fan Không Sync (cắm trực tiếp)
 
-<CustomImage src="/images/notes/pc-things/fan_no_hub.jpg" width={400} height={400}/>
 
-<CustomImage src="/images/notes/pc-things/fan_no_hub_2.png" width={400} height={400}/>
-
+<div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
+    <ImageFigure text="4pin fan" src="/images/notes/pc-things/fan_no_hub.jpg" width={400} height={400}/>
+    <ImageFigure className="aspect-[unset] md:aspect-[1.1]" imageClassName="h-auto mt-full" text="How to install" src="/images/notes/pc-things/fan_no_hub_2.png" width={400} height={400}/>
+</div>
 
 ## SSD
 
 ### Phân loại ssd theo socket
 
-#### 2.5-inch SATA SSDs (Serial ATA)
+<div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
+    <ImageFigure text="2.5-inch SATA SSD" src="/images/notes/pc-things/2.5_ssd.jpg" width={400} height={400} />
+    <ImageFigure text="mSata SDD" src="/images/notes/pc-things/msata_ssd.jpg" width={400} height={400} />
+</div>
 
-<CustomImage src="/images/notes/pc-things/2.5_ssd.jpg" width={700} height={400}/>
+<ImageFigure className="" text="M2 SSDs" src="/images/notes/pc-things/m2_ssd.png" width={700} height={400}/>
 
-#### mSATA SSD
+- M2 SSD phân loại theo giao thức kết nối thì chia làm 2 loại là M2 Sata (SATA) và M2 NVME (PCIe), <a href='#m2'>Xem thêm ở mục M2 Slot</a>
 
-<CustomImage src="/images/notes/pc-things/msata_ssd.jpg" width={700} height={400}/>
+### Tốc độ theo giao thức
 
-#### M.2 SSD
-
-<CustomImage src="/images/notes/pc-things/m2_ssd.png" width={700} height={400}/>
-
-<CustomImage src="/images/notes/pc-things/m2_ssd_size.jpg" width={700} height={400}/>
-
-### Bảng tốc độ theo giao thức
-
-| Interface/Protocol | Sequential Read Speed | Sequential Write Speed |  |
+|  | Read | Write | Socket |
 | :------------------------ | :-------------------------------------- | :---------------------- | :---------------------------- |
-| **SATA III (AHCI)** | Up to 550 MB/s | Up to 500 MB/s | 2.5-inch, M.2 (B+M key), mSATA |
-| **PCIe 3.0 x4 (NVMe)** | 2,500 - 3,500 MB/s | 1,500 - 3,000 MB/s | M.2 (M key) |
-| **PCIe 4.0 x4 (NVMe)** | 5,000 - 7,000+ MB/s | 4,000 - 7,000+ MB/s | M.2 (M key) |
-| **PCIe 5.0 x4 (NVMe)** | 10,000 - 14,000+ MB/s | 10,000 - 14,000+ MB/s | M.2 (M key) |
+| **SATA III** | Up to 550 MB/s | Up to 500 MB/s | 2.5-inch, M2 Sata (B+M key), mSATA |
+| **PCIe 3.0 x4** | 2,500 - 3,500 MB/s | 1,500 - 3,000 MB/s | M2 (M key) |
+| **PCIe 4.0 x4** | 5,000 - 7,000+ MB/s | 4,000 - 7,000+ MB/s | M2 (M key) |
+| **PCIe 5.0 x4** | 10,000 - 14,000+ MB/s | 10,000 - 14,000+ MB/s | M2 (M key) |
 
 
-## M.2 Slot
+## PCIe speed per lane
 
-### Commom Types
+- PCIe 1.0 (2003): 250 MB/s.
+- PCIe 2.0 (2007): 500 MB/s.
+- PCIe 3.0 (2010): ~985 MB/s (approximately 1 GB/s).
+- PCIe 4.0 (2017): ~1.97 GB/s.
+- PCIe 5.0 (2019): ~3.94 GB/s.
+
+## Slots
+
+### Sata
+
+<div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
+    <ImageFigure text="Sata slot on MB" src="/images/notes/pc-things/sata_slot.jpg" width={400} height={400} />
+    <ImageFigure text="Sata cable and Storage connector" src="/images/notes/pc-things/sata_cable.jpg" width={400} height={400} />
+</div>
+
+### MiniPCIe (mPCIe), MSata
+
+<div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
+    <ImageFigure text="mPCIe Wifi Card" src="/images/notes/pc-things/mpcie_card.jpg" width={400} height={400} />
+    <ImageFigure text="mSata SDD" src="/images/notes/pc-things/msata_ssd.jpg" width={400} height={400} />
+</div>
+
+- Dùng chung socket nhưng không thay thế cho nhau
+
+#### mPCIe
+
+- Use PCIe interface (x1), used for expansion cards like Wi-Fi or Bluetooth
+
+#### MSata 
+
+- Use SATA interface, used for storage
+
+### M2
 
 #### B, M Keys
 
 <CustomImage src="/images/notes/pc-things/keys-b-m.jpg" width={700} height={400}/>
 
-- M Key:  PCIe (x4), NVMe SSDs
+- M Key (PCIe x4): NVMe SSDs
 
-- B Key: PCIe (x2) used for SATA SSDs WWAN (Wireless Wide Area Network)
+- B Key (PCIe x2): Used for SATA, SSDs WWAN (Wireless Wide Area Network)
 
-- B+M Key: Thiết kế để cắm cả B key hoặc M key điều được
+- B + M Key (PCIe x2 - Module only): Thiết kế để cắm module vào B key hoặc M key điều được
 
 <CustomImage src="/images/notes/pc-things/b+m_key_ssd.jpg" width={700}/>
+
+- Trên thị truờng cũng có Ssd NVME dùng B+M key nhưng ít, tốc độ sẽ chậm hơn do B key chỉ có 2 lanes PCIe nhưng bù lại là tăng khả năng tăng thích nhiều slot m2 hơn
 
 #### A, E Keys
 
 <CustomImage src="/images/notes/pc-things/keys-a-e.jpg" width={700}/>
 
-- A Key: PCIe (x2) used for Wi-Fi, Bluetooth, WWAN, GPS, and NFC cards.
+- A Key (PCIe x2): Used for Wi-Fi, Bluetooth, WWAN, GPS, and NFC cards.
 
-- E Key: PCIe (x2) often used for Wi-Fi, Bluetooth
+- E Key (PCIe x2): Often used for Wi-Fi, Bluetooth
 
-- A + E Key: Thiết kế để cắm thiết bị cả A key hoặc E key điều được, thường Wi-Fi and Bluetooth combo cards.
+- A + E Key (Module only): Thiết kế để cắm module vào socket A key hoặc E key điều được, thường là các card Wi-Fi tích hợp Bluetooth.
 
-<CustomImage src="/images/notes/pc-things/intel_8260.jpg" width={400} height={400}/>
-
-<CustomImage src="/images/notes/pc-things/m2_wireless_card.jpg" width={700} height={200}/>
+<ImageFigure text="M2 M key to M2 A key" src="/images/notes/pc-things/m2_wireless_card.jpg" width={700} height={200}/>
 
 <CustomImage src="/images/notes/pc-things/m2_cards.jpeg" width={700} height={200}/>
 
 ## PSU
 
 - Trái tim của máy tính
-
-<CustomImage src="/images/notes/pc-things/psu.png" width={700} height={200}/>
 
 - Tiêu chuẩn 80 Plus, cấp càng cao hiệu quả chuyển đồi điện AC sang DC càng sao, càng tiếp kiệm điện, nhưng giá sẽ đắt hơn
 

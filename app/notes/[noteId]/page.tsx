@@ -71,7 +71,7 @@ export default async function Page({ params }: Props) {
                <br />
 
                <NoteIdWrapper>
-                  <div className="prose prose-sm max-w-[unset] md:prose-base prose-slate dark:prose-invert [&_img]:mx-auto">
+                  <div className="prose max-w-[unset] prose-base prose-slate dark:prose-invert [&_img]:mx-auto [&_img]:rounded-md">
                      {content}
                   </div>
                </NoteIdWrapper>

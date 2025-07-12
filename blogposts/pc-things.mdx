@@ -6,17 +6,25 @@ image: "/images/notes/pc-things/banner.jpg"
 ---
 
 
+## My First PC Built Ever
+
+<Video id="nwj6oIN_xZo" />
+
 ## Motherboard
 
 ### Board size (Form)
 
-<CustomImage src="/images/notes/pc-things/board_size.png" width={700} height={400}/>
+<CustomImage
+  src="/images/notes/pc-things/board_size.png"
+  width={700}
+  height={400}
+/>
 
 - ATX (Advanced Technology eXtended): To nhất (30.5 x 24.4 cm)
 
 - Micro-ATX (mATX): 24.4 x 24.4 cm, ít khi PCIe hơn ATC
 
-- Mini-ITX (mITX):  17 x 17 cm nhỏ nhất, for compact or small form factor (SFF)
+- Mini-ITX (mITX): 17 x 17 cm nhỏ nhất, for compact or small form factor (SFF)
 
 ### Commom socket
 
@@ -54,16 +62,78 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - S: Special Edition, often signifying higher clock speeds or unique features compared to standard models.
 
+### Lắp CPU
+
+- Lắp Cpu không phức tạp nhưng <span className="text-red-500 font-bold">lắp sai có thể hư main, Cpu</span>
+
+- Socket Cpu intel khi lắp cần rất nhiều lực để có thể gài lại nên trước khi gài lại phải đảm bảo Cpu được lắp đúng, không lệnh, các rảnh phải đúng vị trí, dùng tay lắc nhẹ Cpu để make sure là nó ok
+
+- Cây gài cần <span className="text-red-500 font-bold">rất nhiều lực</span>
+, khi gài phải chắc tay nếu để văng lại có thể gãy main
+
+<CustomImage
+  src="/images/notes/pc-things/install_cpu1.png"
+  width={600}
+  height={200}
+/>
+
+- Không tháo socket cover
+
+<CustomImage
+  src="/images/notes/pc-things/install_cpu2.png"
+  width={450}
+  height={300}
+/>
+
+- Đặt Cpu đúng vị trí các rảnh và ký hiệu
+
+
+
+## Apply Thermal Paste
+
+<CustomImage
+  src="/images/notes/pc-things/why_need_thermal_paste.jpg"
+  width={1200}
+  height={700}
+/>
+
+
+<a href="https://www.intel.com/content/www/us/en/gaming/resources/how-to-apply-thermal-paste.html" target="_blank">How to Apply Thermal Paste and How It Works</a>
+
+
+<CustomImage
+  src="/images/notes/pc-things/apply_thermal_paste.png"
+  width={600}
+  height={600}
+/>
+
+
+- Quá nhiều hoặc quá ít đều không tốt, vừa đủ là hiệu quả nhất, theo intel thì chỉ cần lượng keo cỡ hạt đậu xanh
+
+- Theo intel, bạn nên để áp lực từ block tản nhiệt trải đều keo trên bề mặt cpu sẽ tốt hơn khi dùng tay để giảm bọt khí
+
+- Không nên dùng lại keo cũ vì có bọt khí
+
+
+
 ## Fan Case
 
 ### Fan sync
 
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
-    <ImageFigure text="PC with sync led" src="/images/notes/pc-things/pc_sync_fan.jpg" width={400} height={400}/>
-    <ImageFigure text="6pin fan" src="/images/notes/pc-things/fan_6pin.jpg" width={400} height={400}/>
+  <ImageFigure
+    text="PC with sync led"
+    src="/images/notes/pc-things/pc_sync_fan.jpg"
+    width={400}
+    height={400}
+  />
+  <ImageFigure
+    text="6pin fan"
+    src="/images/notes/pc-things/fan_6pin.jpg"
+    width={400}
+    height={400}
+  />
 </div>
-
-
 
 - Mortherboard phải có Main Sync
 
@@ -73,37 +143,76 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - Trong trường hợp cắp nhiều quạt mà main không đủ socket thì cần phải mua thêm hub
 
-
 ### Fan Không Sync (cắm trực tiếp)
 
-
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
-    <ImageFigure text="4pin fan" src="/images/notes/pc-things/fan_no_hub.jpg" width={400} height={400}/>
-    <ImageFigure className="aspect-[unset] md:aspect-[1.1]" imageClassName="h-auto mt-full" text="How to install" src="/images/notes/pc-things/fan_no_hub_2.png" width={400} height={400}/>
+  <ImageFigure
+    text="4pin fan"
+    src="/images/notes/pc-things/fan_no_hub.jpg"
+    width={400}
+    height={400}
+  />
+  <ImageFigure
+    className="aspect-[auto] md:aspect-[1/1]"
+    imageClassName="h-auto"
+    text="How to install"
+    src="/images/notes/pc-things/fan_no_hub_2.png"
+    width={400}
+    height={400}
+  />
 </div>
+
+## Ram
+
+<CustomImage
+  src="/images/notes/pc-things/ddr4_ddr5.png"
+  width={600}
+  height={400}
+/>
+
+- Các chuẩn ram khác nhau (DDR3, DDR4, ...) không dùng chung được cho nhau
+
+- Ram laptop khác với máy tính bàn
+
+- Nên mua những hãng Ram có tiếng, thương hiệu lâu đời sẽ ok hơn
 
 ## SSD
 
 ### Phân loại ssd theo socket
 
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
-    <ImageFigure text="2.5-inch SATA SSD" src="/images/notes/pc-things/2.5_ssd.jpg" width={400} height={400} />
-    <ImageFigure text="mSata SDD" src="/images/notes/pc-things/msata_ssd.jpg" width={400} height={400} />
+  <ImageFigure
+    text="2.5-inch SATA SSD"
+    src="/images/notes/pc-things/2.5_ssd.jpg"
+    width={400}
+    height={400}
+  />
+  <ImageFigure
+    text="mSata SDD"
+    src="/images/notes/pc-things/msata_ssd.jpg"
+    width={400}
+    height={400}
+  />
 </div>
 
-<ImageFigure className="" text="M2 SSDs" src="/images/notes/pc-things/m2_ssd.png" width={700} height={400}/>
+<ImageFigure
+  className=""
+  text="M2 SSDs"
+  src="/images/notes/pc-things/m2nvme_m2sata.png"
+  width={700}
+  height={400}
+/>
 
 - M2 SSD phân loại theo giao thức kết nối thì chia làm 2 loại là M2 Sata (SATA) và M2 NVME (PCIe), <a href='#m2'>Xem thêm ở mục M2 Slot</a>
 
 ### Tốc độ theo giao thức
 
-|  | Read | Write | Socket |
-| :------------------------ | :-------------------------------------- | :---------------------- | :---------------------------- |
-| **SATA III** | Up to 550 MB/s | Up to 500 MB/s | 2.5-inch, M2 Sata (B+M key), mSATA |
-| **PCIe 3.0 x4** | 2,500 - 3,500 MB/s | 1,500 - 3,000 MB/s | M2 (M key) |
-| **PCIe 4.0 x4** | 5,000 - 7,000+ MB/s | 4,000 - 7,000+ MB/s | M2 (M key) |
-| **PCIe 5.0 x4** | 10,000 - 14,000+ MB/s | 10,000 - 14,000+ MB/s | M2 (M key) |
-
+|                 | Read                  | Write                 | Socket                             |
+| :-------------- | :-------------------- | :-------------------- | :--------------------------------- |
+| **SATA III**    | Up to 550 MB/s        | Up to 500 MB/s        | 2.5-inch, M2 Sata (B+M key), mSATA |
+| **PCIe 3.0 x4** | 2,500 - 3,500 MB/s    | 1,500 - 3,000 MB/s    | M2 (M key)                         |
+| **PCIe 4.0 x4** | 5,000 - 7,000+ MB/s   | 4,000 - 7,000+ MB/s   | M2 (M key)                         |
+| **PCIe 5.0 x4** | 10,000 - 14,000+ MB/s | 10,000 - 14,000+ MB/s | M2 (M key)                         |
 
 ## PCIe speed per lane
 
@@ -118,15 +227,35 @@ image: "/images/notes/pc-things/banner.jpg"
 ### Sata
 
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
-    <ImageFigure text="Sata slot on MB" src="/images/notes/pc-things/sata_slot.jpg" width={400} height={400} />
-    <ImageFigure text="Sata cable and Storage connector" src="/images/notes/pc-things/sata_cable.jpg" width={400} height={400} />
+  <ImageFigure
+    text="Sata slot on MB"
+    src="/images/notes/pc-things/sata_slot.jpg"
+    width={400}
+    height={400}
+  />
+  <ImageFigure
+    text="Sata cable and Storage connector"
+    src="/images/notes/pc-things/sata_cable.jpg"
+    width={400}
+    height={400}
+  />
 </div>
 
 ### MiniPCIe (mPCIe), MSata
 
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
-    <ImageFigure text="mPCIe Wifi Card" src="/images/notes/pc-things/mpcie_card.jpg" width={400} height={400} />
-    <ImageFigure text="mSata SDD" src="/images/notes/pc-things/msata_ssd.jpg" width={400} height={400} />
+  <ImageFigure
+    text="mPCIe Wifi Card"
+    src="/images/notes/pc-things/mpcie_card.jpg"
+    width={400}
+    height={400}
+  />
+  <ImageFigure
+    text="mSata SDD"
+    src="/images/notes/pc-things/msata_ssd.jpg"
+    width={400}
+    height={400}
+  />
 </div>
 
 - Dùng chung socket nhưng không thay thế cho nhau
@@ -135,7 +264,7 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - Use PCIe interface (x1), used for expansion cards like Wi-Fi or Bluetooth
 
-#### MSata 
+#### MSata
 
 - Use SATA interface, used for storage
 
@@ -143,7 +272,11 @@ image: "/images/notes/pc-things/banner.jpg"
 
 #### B, M Keys
 
-<CustomImage src="/images/notes/pc-things/keys-b-m.jpg" width={700} height={400}/>
+<CustomImage
+  src="/images/notes/pc-things/keys-b-m.jpg"
+  width={700}
+  height={400}
+/>
 
 - M Key (PCIe x4): NVMe SSDs
 
@@ -151,13 +284,13 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - B + M Key (PCIe x2 - Module only): Thiết kế để cắm module vào B key hoặc M key điều được
 
-<CustomImage src="/images/notes/pc-things/b+m_key_ssd.jpg" width={700}/>
+<CustomImage src="/images/notes/pc-things/b+m_key_ssd.jpg" width={400} height={200} />
 
 - Trên thị truờng cũng có Ssd NVME dùng B+M key nhưng ít, tốc độ sẽ chậm hơn do B key chỉ có 2 lanes PCIe nhưng bù lại là tăng khả năng tăng thích nhiều slot m2 hơn
 
 #### A, E Keys
 
-<CustomImage src="/images/notes/pc-things/keys-a-e.jpg" width={700}/>
+<CustomImage src="/images/notes/pc-things/keys-a-e.jpg" width={700} />
 
 - A Key (PCIe x2): Used for Wi-Fi, Bluetooth, WWAN, GPS, and NFC cards.
 
@@ -165,15 +298,24 @@ image: "/images/notes/pc-things/banner.jpg"
 
 - A + E Key (Module only): Thiết kế để cắm module vào socket A key hoặc E key điều được, thường là các card Wi-Fi tích hợp Bluetooth.
 
-<ImageFigure text="M2 M key to M2 A key" src="/images/notes/pc-things/m2_wireless_card.jpg" width={700} height={200}/>
+<ImageFigure
+  className="aspect-auto"
+  text="M2 M key to M2 A key"
+  src="/images/notes/pc-things/m2_wireless_card.jpg"
+  width={700}
+  height={200}
+/>
 
-<CustomImage src="/images/notes/pc-things/m2_cards.jpeg" width={700} height={200}/>
+<CustomImage
+  src="/images/notes/pc-things/m2_cards.jpeg"
+  width={700}
+  height={200}
+/>
 
-## PSU
+## Power Supply
 
-- Trái tim của máy tính
+- Trái tim của máy tính, Càng xịn càng tốt
 
-- Tiêu chuẩn 80 Plus, cấp càng cao hiệu quả chuyển đồi điện AC sang DC càng sao, càng tiếp kiệm điện, nhưng giá sẽ đắt hơn
+- Tiêu chuẩn 80 Plus, cấp càng cao hiệu quả chuyển đồi điện AC sang DC càng cao, càng tiếp kiệm điện
 
-<CustomImage src="/images/notes/pc-things/80+.png" width={700} height={200}/>
-
+<CustomImage src="/images/notes/pc-things/80+.png" width={700} height={200} />

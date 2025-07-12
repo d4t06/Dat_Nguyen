@@ -55,7 +55,7 @@ export default async function Page({ params }: Props) {
 
             <div className="p-3 md:p-5 w-full md:w-3/4 ml-auto text-black dark:text-white bg-amber-100 dark:bg-slate-900 rounded-xl">
                {meta.image && (
-                  <div className="rounded-md mb-3 overflow-hidden aspect-[4/1] dark:bg-white">
+                  <div className="rounded-md mb-3 overflow-hidden aspect-[4/2] dark:bg-white">
                      <CustomImage
                         width={700}
                         height={300}

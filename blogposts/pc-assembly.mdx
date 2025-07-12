@@ -5,12 +5,15 @@ tags: ["PC", "Desktop"]
 image: "/images/notes/first-pc/banner.jpeg"
 ---
 
-
 ## My First PC Built Ever
 
 <Video id="nwj6oIN_xZo" />
 
 ### 0:18 Motherboard
+
+### 1:00 CPU
+
+- Nói chính xác hơn là chỉ dòng Cpu có hậu tố **F** (i3 12100F) thì sẽ không có card đồ họa tích hợp, các mã Cpu còn lại thì có bình thường
 
 ### 1:44 Ram
 
@@ -18,16 +21,108 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 ### 3:31 Cooler Fan
 
+- Tui dùng tản CR1000 4 ống với keo TF7, chạy Cinebench R15 Cpu full load 100% ở 4.09ghz thì nhiệt **max dưới 60 độ C**
+
 ### 4:10 SSD
+
+- Ở chỗ chia SSD theo giao thức mình tui nói nhầm, đúng là **PCIe** và **SATA** chứ không phải là NVME và Sata
 
 ### 5:15 Wifi Card
 
+- Nếu mua thì nên mua card wifi chân M2 tốc độ sẽ cao hơn card wifi miniPCIe
+
+> M.2 ("M-dot-2") tên gọi trước đó là Next Generation Form Factor (NGFF)
+
+<ImageFigure
+  className="aspect-auto"
+  text="M2 M key to M2 A key"
+  src="/images/notes/pc-things/m2_wireless_card.jpg"
+  width={700}
+  height={200}
+/>
+
+- Nếu là card PCIe x1 sang **M2 A key** thì gắn được card wifi **A, A+E**
+
+- Nếu là card PCIe x1 sang **M2 E key** thì **chỉ** gắn được card wifi **E**
+
 ### 7:10 Assembly
+
+- **Tui không phải dân chuyên, cách tui thực hiện điều dựa trên tài liệu, bạn nào cần thì xem tham khảo chơi**
+
+- Để lắp cho dễ thì mình gắn hoàn thiện main, hoàn thiện case, rồi lấy main bỏ vào case cắm dây, siết vít lại là done
+
+- Trong hợp main sẽ có fe chặn main (mình để ở mặt trong case rồi đẩy ra) và neo giữ SSD (phải đảm bảo siết chặc ổ cứng)
+
+- Sài lấy cây vít nhỏ với để tay thấp thấp thôi nha có rơi dô main thì cũng đỡ
+
+- Case kính thì nên để trên tấm vải hay gì đó
+
+#### Lắp Cpu
+
+- Lắp Cpu không phức tạp nhưng <span className="text-red-500 font-bold">lắp sai có thể hư main, Cpu</span>
+
+- Cây gài cần <span className="text-red-500 font-bold">rất nhiều lực</span>
+  , khi gài phải chắc tay nếu để văng lại có thể gãy main
+
+<CustomImage
+  src="/images/notes/pc-things/install_cpu1.png"
+  width={600}
+  height={200}
+/>
+
+- Không tháo socket cover
+
+<CustomImage
+  src="/images/notes/pc-things/install_cpu2.png"
+  width={450}
+  height={300}
+/>
+
+- Đặt Cpu đúng vị trí các rảnh và ký hiệu
+
+- Socket Cpu intel khi lắp cần rất nhiều lực để có thể gài lại nên trước khi gài lại phải đảm bảo Cpu được lắp đúng, không lệnh, các rảnh phải đúng vị trí, dùng tay lắc nhẹ Cpu để make sure là nó ok
+
+#### Quạt tản nhiệt
+
+<CustomImage
+  src="/images/notes/pc-things/why_need_thermal_paste.jpg"
+  width={700}
+/>
+
+<a
+  href="https://www.intel.com/content/www/us/en/gaming/resources/how-to-apply-thermal-paste.html"
+  target="_blank"
+>
+  How to Apply Thermal Paste and How It Works
+</a>
+
+<CustomImage
+  src="/images/notes/pc-things/apply_thermal_paste.png"
+  width={600}
+  height={600}
+/>
+
+- Quá nhiều hoặc quá ít đều không tốt, vừa đủ là hiệu quả nhất, theo intel thì chỉ cần lượng keo cỡ hạt đậu xanh
+
+- Theo intel, bạn nên để áp lực từ block tản nhiệt trải đều keo trên bề mặt cpu sẽ tốt hơn thay vì dùng tay để giảm bọt khí
+
+- Khi siết lắp tản nên siết thay phiên nhau các con vít
 
 ## Extra
 
-<CustomImage src="/images/notes/first-pc/case_1.jpeg" />
-<CustomImage src="/images/notes/first-pc/case_2.jpeg" />
-<CustomImage src="/images/notes/first-pc/case_3.jpeg" />
+### Làm lưới găn bụi từ khẩu trang y tế
 
+<CustomImage src="/images/notes/first-pc/make_the_filter.jpeg" />
 
+- Case tui hơi cùi nên không có lưới chống bụi nên tui phải tự làm
+
+- Dùng băng dính 2 mặt dán xung quanh
+
+- Cắt khẩu trang ra và lấy lớp vải mỏng nhất
+
+### Kết quả
+
+<CustomImage width={700} src="/images/notes/first-pc/banner.jpeg" />
+<CustomImage width={700} src="/images/notes/first-pc/case_1.jpeg" />
+<CustomImage width={700} src="/images/notes/first-pc/case_2.jpeg" />
+<CustomImage width={700} src="/images/notes/first-pc/case_3.jpeg" />

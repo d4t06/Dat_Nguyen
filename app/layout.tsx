@@ -14,7 +14,7 @@ export default function RootLayout({
    return (
       <html lang="en">
          <head />
-         <body className="bg-white dark:bg-slate-800 dark:text-white">
+         <body className="transition-colors bg-white dark:bg-slate-800 dark:text-white">
             <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
                <Navbar />
                {children}

@@ -7,7 +7,7 @@ function Navbar() {
    return (
       <nav className="fixed left-0 w-full top-0 z-[99]">
          <div
-            className={`absolute inset-0 bg-white dark:bg-slate-800 !bg-opacity-[0.7] backdrop-blur-[15px] z-[-1]`}
+            className={`absolute inset-0 transition-colors bg-white dark:bg-slate-800 !bg-opacity-[0.7] backdrop-blur-[15px] z-[-1]`}
          ></div>
 
          <div className="py-3 px-3 w-full md:w-3/4 mx-auto [&_a]:transition-[color] hover:[&_a]:text-red-500 flex flex-row md:flex-row justify-between">

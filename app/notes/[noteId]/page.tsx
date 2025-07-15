@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import useMDXPost from "@/libs/getLocalPosts";
+import { getAllPosts, getPostByName } from "@/libs/getLocalPosts";
 import BlogPostLayout from "@/app/components/layouts/blogpost/BlogPostLayout";
 
 export const revalidate = 86400;
@@ -9,10 +9,9 @@ type Props = {
     noteId: string;
   };
 };
-const { getAllPosts, getPostByName } = useMDXPost({ directory: "notes" });
 
 export async function generateStaticParams() {
-  const postsMeta = await getAllPosts();
+  const postsMeta = await getAllPosts('notes');
 
   if (!postsMeta) return [];
 
@@ -24,7 +23,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = await getPostByName(`${params.noteId}.mdx`);
+
+
+  const post = await getPostByName(`${params.noteId}.mdx`, 'notes');
 
   if (!post) {
     return {
@@ -38,7 +39,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Page({ params }: Props) {
-  const post = await getPostByName(`${params.noteId}.mdx`);
+
+  const post = await getPostByName(`${params.noteId}.mdx`, 'notes');
 
   if (!post) {
     return notFound();

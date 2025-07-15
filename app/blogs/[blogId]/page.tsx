@@ -1,9 +1,6 @@
 import { notFound } from "next/navigation";
-import dateFormatter from "@/libs/dateFormater";
-import CustomImage from "@/app/components/CustomImage";
-import NoteIdWrapper from "./Wrapper";
-import TableOfContent from "@/app/components/mdx/TableOfContent";
-import useMDXPost from "@/libs/getLocalPosts";
+
+import { getAllPosts, getPostByName } from "@/libs/getLocalPosts";
 import BlogPostLayout from "@/app/components/layouts/blogpost/BlogPostLayout";
 import BlogpostWrapper from "./Wrapper";
 
@@ -14,10 +11,10 @@ type Props = {
     blogId: string;
   };
 };
-const { getAllPosts, getPostByName } = useMDXPost({ directory: "blogposts" });
 
 export async function generateStaticParams() {
-  const postsMeta = await getAllPosts();
+  const postsMeta = await getAllPosts("blogposts");
+
 
   if (!postsMeta) return [];
 
@@ -29,7 +26,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = await getPostByName(`${params.blogId}.mdx`);
+
+  const post = await getPostByName(`${params.blogId}.mdx`, 'blogposts');
 
   if (!post) {
     return {
@@ -43,7 +41,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Page({ params }: Props) {
-  const post = await getPostByName(`${params.blogId}.mdx`);
+
+  const post = await getPostByName(`${params.blogId}.mdx`, 'blogposts');
+
 
   if (!post) {
     return notFound();

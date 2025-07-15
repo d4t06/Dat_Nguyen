@@ -1,10 +1,9 @@
-import useMDXPost from "@/libs/getLocalPosts";
+import { getAllPosts } from "@/libs/getLocalPosts";
 import NoteItem from "../components/NoteItem";
 
-const { getAllPosts } = useMDXPost({ directory: "blogposts" });
 
 async function Posts() {
-  const postsMeta = await getAllPosts();
+  const postsMeta = await getAllPosts("blogposts");
 
   if (!postsMeta)
     return <p className="mt-10  text-center">No posts available</p>;

@@ -1,7 +1,7 @@
 import useMDXPost from "@/libs/getLocalPosts";
 import NoteItem from "../components/NoteItem";
 
-const { getAllPosts } = useMDXPost({ directory: "notes" });
+const { getAllPosts } = useMDXPost({ directory: "blogposts" });
 
 async function Posts() {
   const postsMeta = await getAllPosts();
@@ -13,7 +13,7 @@ async function Posts() {
     <div className="md:flex-grow mt-10">
       <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 lg:grid-cols-3">
         {postsMeta.map((p, i) => (
-          <NoteItem postfix="notes" key={i} postMeta={p} />
+          <NoteItem postfix="blogs" key={i} postMeta={p} />
         ))}
       </div>
     </div>

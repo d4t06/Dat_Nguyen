@@ -19,6 +19,7 @@ function Navbar() {
                <Link href={"/"}>Home</Link>
                <Link href={"/projects"}>Projects</Link>
                <Link href={"/notes"}>Notes</Link>
+               <Link href={"/blogs"}>Blogs</Link>
                <Link href={"/about"}>About</Link>
             </div>
 

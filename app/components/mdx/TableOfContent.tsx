@@ -27,13 +27,13 @@ export default function TableOfContent({ content }: Props) {
   return (
     <>
       <div
-        className={`bg-white dark:bg-slate-800 w-[300px] max-w-[50vw] fixed top-0 left-0 bottom-0 pb-16 transition-transform ${
+        className={`bg-white dark:bg-slate-800 w-[300px] max-w-[50vw] fixed top-0 left-0 bottom-0 mt-[60px] pb-16 transition-transform ${
           isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-[none]"
-        } md:max-w-[100vw] md:w-1/4 p-3  rounded-lg overflow-hidden md:bottom-0 md:left-0 md:top-24 flex flex-col md:pb-10`}
+        } md:max-w-[100vw] md:w-1/4 p-3  rounded-lg overflow-hidden md:bottom-0 md:left-0 flex flex-col md:pb-10`}
       >
         <div className="font-semibold text-2xl">Table of contents</div>
 
-        <div className="flex-grow overflow-auto mt-5 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5  [&_a]:rounded space-y-1 ">
+        <div className="flex-grow overflow-auto mt-3 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5  [&_a]:rounded space-y-1 ">
           {tableOfContents.map((t, i) => (
             <Link
               key={i}

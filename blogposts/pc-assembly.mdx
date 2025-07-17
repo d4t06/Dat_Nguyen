@@ -9,43 +9,15 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 <Video id="_CISM1QTBpo" />
 
-### 0:18 Motherboard
-
-### 1:00 CPU
-
 - Nói chính xác hơn là chỉ dòng Cpu có hậu tố **F** (i3 12100F) thì sẽ không có card đồ họa tích hợp, các mã Cpu còn lại thì có bình thường
-
-### 1:44 Ram
-
-### 2:51 Power Supply
-
-### 3:31 Cooler Fan
 
 - Tui dùng tản CR1000 4 ống với keo TF7, chạy Cinebench R15 Cpu full load 100% ở 4.09ghz thì nhiệt **max dưới 60 độ C**
 
-### 4:10 SSD
-
 - Ở chỗ chia SSD theo giao thức mình tui nói nhầm, đúng là **PCIe** và **SATA** chứ không phải là NVME và Sata
-
-### 5:15 Wifi Card
 
 - Nếu mua thì nên mua card wifi chân M2 tốc độ sẽ cao hơn card wifi miniPCIe
 
-> M.2 ("M-dot-2") tên gọi trước đó là Next Generation Form Factor (NGFF)
-
-<ImageFigure
-  className="aspect-auto"
-  text="M2 M key to M2 A key"
-  src="/images/notes/pc-things/m2_wireless_card.jpg"
-  width={700}
-  height={200}
-/>
-
-- Nếu là card PCIe x1 sang **M2 A key** thì gắn được card wifi **A, A+E**
-
-- Nếu là card PCIe x1 sang **M2 E key** thì gắn gắn được card wifi **E, A+E**
-
-### 7:10 Assembly
+## Assembly
 
 - **Tui không phải dân chuyên, cách tui thực hiện điều dựa trên tài liệu, bạn nào cần thì xem tham khảo chơi**
 
@@ -57,7 +29,9 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 - Case kính thì nên để trên tấm vải hay gì đó
 
-#### Lắp Cpu
+### Cpu
+
+<Short id="1XJfLBQ21nY?mute=1" />
 
 - Lắp Cpu không phức tạp nhưng <span className="text-red-500 font-bold">lắp sai có thể hư main, Cpu</span>
 
@@ -82,7 +56,17 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 - Socket Cpu intel khi lắp cần rất nhiều lực để có thể gài lại nên trước khi gài lại phải đảm bảo Cpu được lắp đúng, không lệnh, các rảnh phải đúng vị trí, dùng tay lắc nhẹ Cpu để make sure là nó ok
 
-#### Quạt tản nhiệt
+### Ram
+
+<Short id="2pey-BwTMPE" />
+
+### M2 NVME Ssd
+
+<Short id="IRqY_17IDoc" />
+
+### Quạt tản nhiệt
+
+<Short id="IIXWODRIOfg?mute=1" />
 
 <CustomImage
   src="/images/notes/pc-things/why_need_thermal_paste.jpg"
@@ -108,6 +92,14 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 - Khi siết lắp tản nên siết thay phiên nhau các con vít
 
+### Front panel header
+
+<CustomImage
+  src="/images/notes/first-pc/fp_header.jpg"
+  width={350}
+  height={240}
+/>
+
 ## Extra
 
 ### Làm lưới găn bụi từ khẩu trang y tế
@@ -122,12 +114,13 @@ image: "/images/notes/first-pc/banner.jpeg"
 
 ### 2 Usb port in 1 Usb header
 
+<Short id="yU7CXY-gPiA" />
+
 - Do chỉ có một Usb header (9pin) nên không đủ cho card wifi (để dùng bluetooth) và cổng Usb trên case
 
 <CustomImage width={120} src="/images/notes/first-pc/usb_header.png" />
 
 - Theo sơ đồ mạch thì usb header cung cấp được 2 Usb port, do đó mình sẽ gộp 2 chân cắm Usb 9pin thành thành 1
-
 
 <div className="grid not-prose grid-cols-1 md:grid-cols-2 gap-4">
   <ImageFigure

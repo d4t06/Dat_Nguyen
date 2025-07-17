@@ -1,8 +1,8 @@
-import dateFormatter from "@/libs/dateFormater";
 import MDXWrapper from "./Wrapper";
 import TableOfContent from "../../mdx/TableOfContent";
 import CustomImage from "../../CustomImage";
 import { ReactNode } from "react";
+import dateFormatter, { convertMM_DDToDD_MM } from "@/app/utils/appHelper";
 
 export default function BlogPostLayout({
   meta,
@@ -29,11 +29,11 @@ export default function BlogPostLayout({
           )}
 
           <h1 className="text-4xl font-bold">{meta.title}</h1>
-          <p>{dateFormatter(meta.date)}</p>
+          <p>{dateFormatter(convertMM_DDToDD_MM(meta.date).toDateString())}</p>
           <br />
 
           <MDXWrapper>
-            <div className="prose max-w-[unset]  prose-base prose-slate dark:prose-invert [&_img]:mx-auto md:[&>img]:max-w-[60%] [&_img]:rounded-md">
+            <div className="prose max-w-[unset]  prose-base prose-slate dark:prose-invert [&_img]:mx-auto md:[&>img]:max-w-[60%] [&_img]:rounded-md [&_iframe]:rounded-md">
               {content}
             </div>
 

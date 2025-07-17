@@ -22,7 +22,7 @@ export default function AboutPage() {
 					kind of job opportunities that suit my interests.
 					<br />
 					<br />
-					Download&nbsp;
+					See&nbsp;
 					<a href="Nguyen_Huu_Dat.pdf" download className="underline">my CV</a>
 				</p>
 			</Frame>

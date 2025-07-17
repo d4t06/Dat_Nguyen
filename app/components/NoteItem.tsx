@@ -13,7 +13,7 @@ export default function NoteItem({
   return (
     <Link
       href={`/${postfix}/${id}`}
-      className="transition-transform rounded-xl border border-black dark:border-white overflow-hidden hover:translate-y-2"
+      className="transition-transform dark:bg-slate-900 rounded-xl border border-black dark:border-white overflow-hidden hover:translate-y-2"
     >
       <div className="pt-[30%] relative">
         <div className="absolute inset-0 dark:bg-white">
@@ -24,7 +24,7 @@ export default function NoteItem({
           />
         </div>
       </div>
-      <div className="px-3 py-4 bg-white dark:bg-slate-900">
+      <div className="px-3 py-5">
         <p className="text-2xl font-bold">{title}</p>
         <div className="flex gap-2 mt-3">
           {!!postMeta.tags &&

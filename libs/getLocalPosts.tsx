@@ -6,15 +6,10 @@ import Video from "@/app/components/Video";
 import CustomMDXComponents from "@/app/components/mdx/MDXComponents";
 import ImageFigure from "@/app/components/mdx/ImageFigure";
 import remarkGfm from "remark-gfm";
+import Short from "@/app/components/Short";
+import { convertMM_DDToDD_MM } from "@/app/utils/appHelper";
 
-const getDate = (value: string) => {
-  const parts = value.split("-");
-  const day = parseInt(parts[0], 10);
-  const month = parseInt(parts[1], 10) - 1; // Subtract 1 for zero-indexed month
-  const year = parseInt(parts[2], 10);
 
-  return new Date(year, month, day).getDate();
-};
 
 export async function getPostByName(fileName: string, directory: "notes" | "blogposts") {
   try {
@@ -31,6 +26,7 @@ export async function getPostByName(fileName: string, directory: "notes" | "blog
         Video,
         CustomImage,
         ImageFigure,
+        Short,
         ...CustomMDXComponents,
       },
       options: {
@@ -74,7 +70,7 @@ export async function getAllPosts(directory: "notes" | "blogposts") {
     }
   }
 
-  postsMeta.sort((a, b) => getDate(b.date) - getDate(a.date));
+  postsMeta.sort((a, b) => convertMM_DDToDD_MM(b.date).getDate() - convertMM_DDToDD_MM(a.date).getDate());
 
   return postsMeta;
 }

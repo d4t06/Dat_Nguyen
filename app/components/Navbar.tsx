@@ -15,7 +15,7 @@ function Navbar() {
                <h1 className="text-3xl font-bold">DN</h1>
             </Link>
 
-            <div className="font-semibold hidden md:flex items-center space-x-5 [&_a]:inline-block [&_a]:py-1 [&_a]:text-lg ">
+            <div className="font-bold hidden md:flex items-center space-x-5 [&_a]:inline-block [&_a]:py-1 [&_a]:text-lg ">
                <Link href={"/"}>Home</Link>
                <Link href={"/projects"}>Projects</Link>
                <Link href={"/notes"}>Notes</Link>

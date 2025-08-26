@@ -5,6 +5,7 @@ import Link from "next/link";
 type Props = {
 	name: string;
 	iamgePath: string;
+	iamgePathDark?: string;
 	desc: string;
 	tech: string[];
 	gitLink: string;
@@ -17,6 +18,7 @@ export default function ProjectItem({
 	desc,
 	gitLink,
 	iamgePath,
+	iamgePathDark,
 	name,
 	tech,
 	reverse,
@@ -34,11 +36,21 @@ export default function ProjectItem({
 				<div className="w-full md:w-3/5 md:border md:border-black md:rounded-xl overflow-hidden">
 					<Image
 						alt=""
-						className="w-full"
-						width={700}
-						height={700}
+						className={`w-full ${iamgePathDark ? "dark:hidden" : ""} `}
+						width={1080}
+						height={720}
 						src={iamgePath}
 					/>
+
+					{iamgePathDark && (
+						<Image
+							alt=""
+							className={`w-full hidden dark:block`}
+							width={1080}
+							height={720}
+							src={iamgePathDark}
+						/>
+					)}
 				</div>
 				<div
 					className={`absolute w-full text-white md:text-black dark:md:text-white bg-black/60 justify-center p-4 top-0 bottom-0 left-0 md:top-[unset] md:bottom-[unset] md:bg-transparent md:p-0 md:w-1/2 space-y-4 flex flex-col ${getTextBoxClasses()}`}
@@ -49,7 +61,7 @@ export default function ProjectItem({
 						{desc}
 					</div>
 
-					<div className="space-x-3 text-sm lg:text-base dark:text-white">
+					<div className="space-x-3 break-keep text-sm lg:text-base dark:text-white">
 						{tech.map((t, i) => (
 							<span key={i}>{t}</span>
 						))}

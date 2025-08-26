@@ -18,12 +18,11 @@ export default function AboutPage() {
 					University with a strong passion for web technologies seeking an job
 					opportunity.
 					<br />
-					<br />I am currently living Can Tho, Viet Nam and available for any
-					kind of job opportunities that suit my interests.
-					<br />
 					<br />
 					See&nbsp;
-					<a href="Nguyen_Huu_Dat.pdf" download className="underline">my CV</a>
+					<a href="Nguyen_Huu_Dat.pdf" download className="underline">
+						my CV
+					</a>
 				</p>
 			</Frame>
 
@@ -39,32 +38,30 @@ export default function AboutPage() {
 					ls
 				</p>
 				<br />
-
 				<p className="text-purple-400">Proficient In </p>
 				<br />
-
 				<div className="grid grid-cols-2 text-white">
 					<p>React</p> <p>Next.js</p>
 					<p>Express</p> <p>NestJS</p>
 				</div>
 				<br />
-
 				<p className="text-purple-400">Others </p>
 				<br />
-
 				<div className="grid grid-cols-2 text-white">
 					<p>Vue</p> <p>Nuxt</p> <p>Angular</p>
 					<p>Spring Boot</p> <p>React Native</p>
 					<p>Flutter</p>
 				</div>
 				<br />
-
 				<p className="text-purple-400">Tool </p>
 				<br />
-
 				<div className="grid grid-cols-2 text-white">
 					<p>Git</p> <p>Docker</p>
 				</div>
+				<br />
+				<p className="text-purple-400">English </p>
+				<br />
+				<p>Technical reading proficiency</p>
 			</Frame>
 
 			<Frame>
@@ -83,7 +80,7 @@ export default function AboutPage() {
 				<p className="text-purple-400">04/2023 - 10/2023 </p>
 				<br />
 
-				<p>Intern front-end developer | AI CREATIVE CO., LTD</p>
+				<p>Freelance Front-end Developer | AI CREATIVE CO., LTD</p>
 
 				<br />
 				<p>Developed a responsive front-end website using WordPress and SCSS</p>

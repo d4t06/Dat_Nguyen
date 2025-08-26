@@ -1,6 +1,7 @@
-import { fbIcon, githubIcon, linkedinIcon } from "@/public/icon";
+import { fbIcon, githubIcon, linkedinIcon, mailIcon } from "@/public/icon";
 import Image from "next/image";
 import Link from "next/link";
+import Email from "./components/Email";
 
 export const metadata = {
    title: "Dat Nguyen",
@@ -9,10 +10,18 @@ export const metadata = {
 export default function Home() {
    return (
       <div className="flex flex-col flex-grow lg:flex-row items-center lg:justify-center min-h-[calc(100vh-120px-60px)] md:min-h-[unset]">
-         <div className="w-[40vw] flex-shrink-0 md:w-[300px]">
+         <div className="w-[40vw] rounded-full overflow-hidden flex-shrink-0 md:w-[260px] relative">
             <Image
-               className="rounded-full w-full"
+               className="w-full h-full"
                src="/images/my_avatar.jpg"
+               width={300}
+               height={300}
+               alt="Dat"
+            />
+
+            <Image
+               className="h-full w-full scale-[1.03] absolute top-0 left-0"
+               src="/images/otw.png"
                width={300}
                height={300}
                alt="Dat"
@@ -21,9 +30,13 @@ export default function Home() {
 
          <div className="mt-10 lg:ml-10 dark:text-white">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
-               Hi, I&apos;m <span className="text-red-500">Dat Nguyen</span>{" "}
+               Hi, I&apos;m&nbsp;
+               <span className="text-red-500">Huu Dat Nguyen</span>
                &nbsp;
-               <span className="inline-block wave">&#128075;</span>
+               <img
+                  className="w-10 md:w-14 inline-block wave align-sub"
+                  src="/images/wave_hand.png"
+               />
             </div>
 
             <div className="text-xl r lg:text-2xl font-semibold mt-3">
@@ -31,10 +44,29 @@ export default function Home() {
                <div>I build web things</div>
             </div>
 
-            <div className="px-4 [&_p]:p-3 text-xl mt-3">
-               <p>🏢 &nbsp; Can Tho, Viet Nam</p>
-               <p>💖 &nbsp; ReactJS, TailwindCSS</p>
-               <p>✉️ &nbsp; datnh0708@gmail.com</p>
+            <div className="px-4 [&_p]:p-3 [&_img]:mr-4 [&_img]:pb-1 md:[&_p]:text-xl mt-3">
+               <p>
+                  <img
+                     className="w-6 md:w-7 lg:w-8 inline-block translate-y-[-2px]"
+                     src="/images/place.png"
+                  />
+                  Can Tho, Viet Nam
+               </p>
+               <p>
+                  <img
+                     className="w-6 md:w-7 lg:w-8 inline-block"
+                     src="/images/heart_start.png"
+                  />
+                  React, TypeScript
+               </p>
+               <p>
+                  <img
+                     className="w-6 md:w-7 lg:w-8 inline-block"
+                     src="/images/mail.png"
+                  />
+
+                  <Email />
+               </p>
             </div>
 
             <div className="flex items-center justify-center space-x-10 mt-7 [&_a]:w-10 [&_a]:transition-[color] hover:[&_a]:text-red-500">

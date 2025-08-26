@@ -5,43 +5,57 @@ export default function ProjectsPage() {
 	return (
 		<>
 			<div className="space-y-20 mt-10">
-				<div className="text-2xl text-center font-semibold">
+				<div className="text-2xl text-center font-bold">
 					Some Things I&apos;ve Built
 				</div>
 
 				<ProjectItem
 					demoLink="https://d4t06.github.io/HD-MP3"
 					gitLink="https://github.com/d4t06/HD-MP3"
-					desc="Modern music player application with live lyrics and karaoke functionality and many other things..."
-					iamgePath="/images/projects/hd-mp3.png"
-					name="HD MP3"
-					tech={["ReactJS", "Firebase", "TypeScript", "TailwindCSS"]}
+					desc="Modern music player application with live lyrics, karaoke, comment toxic check functionality and many other things..."
+					iamgePath="/images/projects/dmusic.png"
+					iamgePathDark="/images/projects/dmusic_dark.png"
+					name="Dmusic"
+					tech={[
+						"React",
+						"Firebase",
+						"Express.js",
+						"Flask",
+						"Spotify-API",
+						"...",
+					]}
 				/>
 
 				<ProjectItem
 					reverse
 					demoLink="https://next-mobile-ebon.vercel.app"
 					gitLink="https://github.com/d4t06/Next-Mobile"
-					iamgePath="/images/projects/next-mobile.png"
+					iamgePath="/images/projects/dspec.png"
+					iamgePathDark="/images/projects/dspec_dark.png"
 					desc="Laptop, Tablet and Smartphone reviews application with aim is to provide
 information about notebooks, smartphones and tablet"
-					name="Next Mobile"
-					tech={["Next.js", "NestJS", "Tailwind CSS", "MySQL"]}
+					name="Dspec"
+					tech={["Next.js", "NestJS", "MySQL"]}
 				/>
 
-				<ProjectItem
+				{/*<ProjectItem
 					demoLink="https://d4t06.github.io/HDPlayer"
 					gitLink="https://github.com/d4t06/HDPlayer"
 					iamgePath="/images/projects/hd-player.png"
 					desc="Simple music player with live lyrics"
 					name="HD Player"
-					tech={[
-						"React",
-						"Express",
-						"Sequelize ORM",
-						"Tailwind CSS",
-						"MySQL",
-					]}
+					tech={["React", "Express", "Sequelize ORM", "Tailwind CSS", "MySQL"]}
+				/>
+*/}
+
+				<ProjectItem
+					demoLink="https://d4t06.github.io/HD-Chat"
+					gitLink="https://github.com/d4t06/HD-Chat"
+					iamgePath="/images/projects/hd-chat.png"
+					desc="Simple chat application allow users to send messages with each other through
+one-on-one chatting and group chatting"
+					name="HD Chat"
+					tech={["React", "Java Spring Boot", "MySQL", "STOMP"]}
 				/>
 
 				<ProjectItem
@@ -52,32 +66,10 @@ information about notebooks, smartphones and tablet"
 					desc="Modern e-commerce website with a user-friendly UI and powerful
 management system"
 					name="HD Mobile"
-					tech={[
-						"React",
-						"Express",
-						"Sequelize ORM",
-						"Tailwind CSS",
-						"MySQL",
-					]}
+					tech={["React", "Express.js", "Sequelize ORM", "MySQL"]}
 				/>
 
-				<ProjectItem
-					demoLink="https://d4t06.github.io/HD-Chat"
-					gitLink="https://github.com/d4t06/HD-Chat"
-					iamgePath="/images/projects/hd-chat.png"
-					desc="Modern e-commerce website with a user-friendly UI and powerful
-management system"
-					name="HD Chat"
-					tech={[
-						"React",
-						"Express",
-						"Sequelize ORM",
-						"Tailwind CSS",
-						"MySQL",
-					]}
-				/>
-
-				<ProjectItem
+				{/*				<ProjectItem
 					reverse
 					demoLink="https://next-mp3.vercel.app"
 					gitLink="https://github.com/d4t06/Next-MP3"
@@ -85,9 +77,9 @@ management system"
 					desc="Simple music player with live lyrics using Next.js"
 					name="Next MP3 "
 					tech={["Next.js", "Tailwind CSS", "NestJS", "MySQL"]}
-				/>
+				/>*/}
 
-				<div className="text-2xl text-center font-semibold mt-10">
+				<div className="text-2xl text-center font-bold mt-10">
 					Other Noteworthy Projects
 				</div>
 
@@ -97,12 +89,7 @@ management system"
 						desc="Grocery store management built with React Native"
 						gitLink="https://github.com/d4t06/Argo-Store-React-Native"
 						name="Argo Store"
-						tech={[
-							"React Native",
-							"Expo",
-							"Tailwind CSS",
-							"Firebase",
-						]}
+						tech={["React Native", "Expo", "Tailwind CSS", "Firebase"]}
 					/>
 
 					<OtherProjectItem

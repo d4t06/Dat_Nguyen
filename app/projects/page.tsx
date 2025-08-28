@@ -15,7 +15,7 @@ export default function ProjectsPage() {
 					desc="Modern music player application with live lyrics, karaoke, comment toxic check functionality and many other things..."
 					iamgePath="/images/projects/dmusic.png"
 					iamgePathDark="/images/projects/dmusic_dark.png"
-					name="Dmusic"
+					name="Music Player"
 					tech={[
 						"React",
 						"Firebase",
@@ -34,8 +34,8 @@ export default function ProjectsPage() {
 					iamgePathDark="/images/projects/dspec_dark.png"
 					desc="Laptop, Tablet and Smartphone reviews application with aim is to provide
 information about notebooks, smartphones and tablet"
-					name="Dspec"
-					tech={["Next.js", "NestJS", "MySQL"]}
+					name="Tech Device Reviews"
+					tech={["Next.js", "NestJS", "TypeORM", "MySQL"]}
 				/>
 
 				{/*<ProjectItem
@@ -49,24 +49,24 @@ information about notebooks, smartphones and tablet"
 */}
 
 				<ProjectItem
+					demoLink="https://d4t06.github.io/HD-Mobile"
+					gitLink="https://github.com/d4t06/HD-Mobile"
+					iamgePath="/images/projects/dstore.png"
+					desc="Modern e-commerce website with a user-friendly UI and powerful
+management system"
+					name="Devices & Accessories Store"
+					tech={["React", "Express.js", "Sequelize ORM", "MySQL"]}
+				/>
+
+				<ProjectItem
+					reverse
 					demoLink="https://d4t06.github.io/HD-Chat"
 					gitLink="https://github.com/d4t06/HD-Chat"
 					iamgePath="/images/projects/hd-chat.png"
 					desc="Simple chat application allow users to send messages with each other through
 one-on-one chatting and group chatting"
-					name="HD Chat"
+					name="Online Chat"
 					tech={["React", "Java Spring Boot", "MySQL", "STOMP"]}
-				/>
-
-				<ProjectItem
-					reverse
-					demoLink="https://d4t06.github.io/HD-Mobile"
-					gitLink="https://github.com/d4t06/HD-Mobile"
-					iamgePath="/images/projects/hd-mobile.png"
-					desc="Modern e-commerce website with a user-friendly UI and powerful
-management system"
-					name="HD Mobile"
-					tech={["React", "Express.js", "Sequelize ORM", "MySQL"]}
 				/>
 
 				{/*				<ProjectItem
@@ -85,23 +85,31 @@ management system"
 
 				<div className="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
 					<OtherProjectItem
-						demoLink="https://github.com/d4t06/Argo-Store-React-Native"
-						desc="Grocery store management built with React Native"
+						demoLink="https://d4t06.github.io/Argo-Store"
+						desc="Simple grocery store management built-in PDF generation built with Next.js"
 						gitLink="https://github.com/d4t06/Argo-Store-React-Native"
-						name="Argo Store"
+						name="Grocery Store"
+						tech={["Next.js", "Tailwind CSS", "Firebase"]}
+					/>
+
+					<OtherProjectItem
+						demoLink="https://github.com/d4t06/Argo-Store-React-Native"
+						desc="Clone of Grocery Store built with React Native"
+						gitLink="https://github.com/d4t06/Argo-Store-React-Native"
+						name="Clone of Grocery Store"
 						tech={["React Native", "Expo", "Tailwind CSS", "Firebase"]}
 					/>
 
 					<OtherProjectItem
 						demoLink="https://nuxt-mobile.netlify.app"
 						gitLink="https://github.com/d4t06/Nuxt-Mobile"
-						desc="Laptop, Tablet and Smartphone reviews application with aim is to provide information about notebooks, smartphones and tablet"
-						name="Nuxt Mobile"
+						desc="Clone of Tech Device Reviews using Nuxt.js"
+						name="Clone of Tech device Reviews"
 						tech={["Nuxt", "Tailwind CSS"]}
 					/>
 					<OtherProjectItem
 						demoLink="https://nuxt-mp3.netlify.app"
-						desc="Modern music player application with live lyrics and karaoke functionality and many other things..."
+						desc="Simple retro style music player using Nuxt.js"
 						gitLink="https://github.com/d4t06/Nuxt-MP3"
 						name="Nuxt MP3"
 						tech={["Nuxt", "Tailwind CSS"]}

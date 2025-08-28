@@ -33,7 +33,7 @@ export default function ProjectItem({
 			<div
 				className={`relative aspect-[1/1] flex items-center rounded-xl md:aspect-[unset] bg-white md:bg-transparent overflow-hidden ${reverse ? "flex-row-reverse" : ""}`}
 			>
-				<div className="w-full md:w-3/5 md:border md:border-black md:rounded-xl overflow-hidden">
+				<div className="w-full md:w-3/5 md:border md:border-[--a-10-cl] md:rounded-xl overflow-hidden">
 					<Image
 						alt=""
 						className={`w-full ${iamgePathDark ? "dark:hidden" : ""} `}
@@ -57,7 +57,7 @@ export default function ProjectItem({
 				>
 					<div className="text-2xl lg:text-3xl font-bold">{name}</div>
 
-					<div className="p-3 lg:p-5 lg:text-lg border bg-white	border-black rounded-md text-black text-left dark:bg-slate-900 dark:text-white">
+					<div className="primary-shadow p-3 lg:p-5 lg:text-lg border bg-white	border-black dark:border-white rounded-md text-black text-left dark:bg-slate-900 dark:text-white">
 						{desc}
 					</div>
 

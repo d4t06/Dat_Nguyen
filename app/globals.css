@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --a-10-cl: rgba(0, 0, 0, 0.1);
+  --primary-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.primary-shadow {
+  box-shadow: var(--primary-shadow);
+}
+
+.dark {
+  --a-10-cl: rgba(255, 255, 255, 0.1);
+}
+
 /* Fallback for browsers that don't support variable fonts */
 @font-face {
   font-family: "abc";

@@ -31,15 +31,15 @@ export default function Home() {
          <div className="mt-10 lg:ml-10 dark:text-white">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
                Hi, I&apos;m&nbsp;
-               <span className="text-red-500">Huu Dat Nguyen</span>
-               &nbsp;
+               <span className="text-red-500 hidden lg:inline">Huu Dat Nguyen</span>
+               <span className="text-red-500 lg:hidden">Dat Nguyen</span>&nbsp;
                <img
                   className="w-10 md:w-14 inline-block wave align-sub"
                   src="/images/wave_hand.png"
                />
             </div>
 
-            <div className="text-xl r lg:text-2xl font-semibold mt-3">
+            <div className="text-xl r lg:text-2xl font-semibold mt-5">
                <div>I&apos;m a student at Can Tho University</div>
                <div>I build web things</div>
             </div>

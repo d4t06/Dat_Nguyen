@@ -3,7 +3,9 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Dat Nguyen",
+  title: "Dat Nguyen Vercel",
+  description:
+    "I'm Nguyen Huu Dat - a final-year Software Engineering student at Can Tho University with a strong passion for web technologies seeking an job opportunity.",
 };
 
 export default function RootLayout({

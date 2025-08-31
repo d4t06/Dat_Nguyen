@@ -23,7 +23,7 @@ export default function AboutPage() {
 					<br />
 					<br />
 					See&nbsp;
-					<a href="Nguyen_Huu_Dat.pdf" download className="underline">
+					<a href="https://raw.githubusercontent.com/d4t06/Dat_Nguyen_Resource/master/Nguyen_Huu_Dat_cv.pdf" target="_blank" className="underline">
 						my CV
 					</a>
 				</p>

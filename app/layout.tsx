@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Dat Nguyen Vercel",
+  title: "Dat Nguyen",
   verification: {
     google: "Zr0gom2JXEgWZu3IFSKVXYDqC885w4kSH7cHdQZyaqA",
   },

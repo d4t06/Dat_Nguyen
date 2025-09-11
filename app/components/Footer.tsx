@@ -4,7 +4,7 @@ export default function Footer() {
 			<div className="pt-10 pb-5 text-center text-sm">
 				<p>
 					Make with
-					<img className="w-5 inline-block mx-1" src="/images/heart.png" />
+					<img className="w-4 inline-block mx-1" src="/images/heart.png" />
 					by Nguyen Huu Dat
 				</p>
 

@@ -4,7 +4,7 @@ date: "2-7-2025"
 tags: ["bash", "cmd"]
 image: "/images/notes/bash.png"
 ---
-#### group
+#### Group
 
 - add user to group
 
@@ -12,17 +12,17 @@ image: "/images/notes/bash.png"
 sudo usermod -aG group user
 ```
 
-#### check wake up devide
+#### Check wake up devide
 
 ```
 powercfg -devicequery wake_armed
 ```
 
-#### install custom fonts
+#### Install custom fonts
 
-~/.local/share/fonts
+place fonts at ~/.local/share/fonts
 
-#### install custom app
+#### Install custom app
 
 - Extract and move app folde to /opt
 
@@ -38,7 +38,7 @@ Terminal=false
 Type=Application
 ```
 
-#### install nodejs
+#### Install nodejs
 
 - Add to ~/.bash_profile
 
@@ -46,13 +46,19 @@ Type=Application
 export PATH=$PATH:/opt/node-v22/bin
 ```
 
-#### format partion in cmd
+#### Run npm with sudo
+
+```
+sudo env PATH="$PATH:/opt/node-v22.18.0/bin" npm
+```
+
+#### Format partion in cmd
 
 ```
 format v: /fs:fat32
 ```
 
-#### rebuild uefi partiton
+#### Rebuild uefi partiton
 
 ```shell
 bcdboot c:\Windows /s <boot letter>: /f UEFI\
@@ -62,7 +68,7 @@ bcdboot c:\Windows /s <boot letter>: /f UEFI\
 
 make alias permanent change file "~/.bash_profile"
 
-#### kill running process at specific port
+#### Kill running process at specific port
 
 ```
 fuser -k 8080/tcp
@@ -74,3 +80,8 @@ fuser -k 8080/tcp
 dpkg -l | grep -i my-package
 sudo apt remove my-app
 ```
+
+#### Git
+
+git config --global --edit
+git remove show origin

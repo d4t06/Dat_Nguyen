@@ -1,12 +1,13 @@
 import { fileIcon, githubIcon, linkIcon } from "@/public/icon";
 import Link from "next/link";
+import TechListFrame from "./TechListFrame";
 
 type Props = {
 	name: string;
 	desc: string;
 	tech: string[];
 	gitLink: string;
-	demoLink: string;
+	demoLink?: string;
 };
 
 export default function OtherProjectItem({
@@ -24,21 +25,23 @@ export default function OtherProjectItem({
 					<Link target="_blank" href={gitLink} className="w-6">
 						{githubIcon}
 					</Link>
-					<Link target="_blank" href={demoLink} className="w-6">
-						{linkIcon}
-					</Link>
+					{demoLink && (
+						<Link target="_blank" href={demoLink} className="w-6">
+							{linkIcon}
+						</Link>
+					)}
 				</div>
 			</div>
 
 			<div className="text-xl font-bold">{name}</div>
 
-			<div>{desc}</div>
+			<div className="text-[--text-muted-cl]">{desc}</div>
 
-			<div className="space-x-3 text-sm dark:text-white opacity-[.8]">
+			<TechListFrame className="!mt-1">
 				{tech.map((t, i) => (
 					<span key={i}>{t}</span>
 				))}
-			</div>
+			</TechListFrame>
 		</div>
 	);
 }

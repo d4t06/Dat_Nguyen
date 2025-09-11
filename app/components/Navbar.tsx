@@ -1,7 +1,29 @@
+"use client";
 import Link from "next/link";
 import { githubIcon, menuIcon } from "../../public/icon";
 import ToggleTheme from "./ToggleTheme";
 import MobileMenu from "./MobileMenu";
+import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
+
+function LinkItem({ children, href }: { children: ReactNode; href: string }) {
+   const pathName = usePathname();
+
+   const getActive =
+      href === "/"
+         ? pathName === "/"
+            ? "active"
+            : ""
+         : pathName.includes(href)
+           ? "active"
+           : "";
+
+   return (
+      <Link className={getActive} href={href}>
+         {children}
+      </Link>
+   );
+}
 
 function Navbar() {
    return (
@@ -15,12 +37,13 @@ function Navbar() {
                <h1 className="text-3xl font-bold">DN</h1>
             </Link>
 
-            <div className="font-bold hidden md:flex items-center space-x-5 [&_a]:inline-block [&_a]:py-1 [&_a]:text-lg ">
-               <Link href={"/"}>Home</Link>
-               <Link href={"/projects"}>Projects</Link>
-               <Link href={"/notes"}>Notes</Link>
-               <Link href={"/blogs"}>Blogs</Link>
-               <Link href={"/about"}>About</Link>
+            <div className="font-medium hidden md:flex items-center space-x-5 [&_a]:inline-block [&_a]:py-1 [&_a]:text-lg [&_a]:text-[--text-muted-cl] [&_a.active]:text-[--text-cl]">
+               {/*<Link href={"/"}>Home</Link>*/}
+               <LinkItem href={"/"}>Home</LinkItem>
+               <LinkItem href={"/projects"}>Projects</LinkItem>
+               <LinkItem href={"/notes"}>Notes</LinkItem>
+               <LinkItem href={"/blogs"}>Blogs</LinkItem>
+               <LinkItem href={"/about"}>About</LinkItem>
             </div>
 
             <div className="items-center flex space-x-2">

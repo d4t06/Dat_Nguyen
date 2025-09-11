@@ -1,0 +1,78 @@
+---
+title: "Nest + TypeORM"
+date: "3-7-2025"
+tags: ["NestJS", "TypeORM"]
+image: "/images/notes/nest_typeorm.png"
+---
+
+## NestJS
+
+### Middleware
+
+- Is a function call before router handler
+
+### Exception filter
+
+- When an exception not handle by your code, it's catch by this then send user-friendly response
+
+### Pipe
+
+- Transformation: From string to integer
+
+- Validation: Evaluate input data if valid, otherwise throw exception
+
+### Guard
+
+- Determine whether a given request will be handled by the route handler or not, Have access to the ExecutionContext instance
+
+### Interceptor
+
+- Interceptor(ExecutionContext, CallHandler), modify response P
+
+- Transform the result return from controller before send to client
+
+- Bind extra logic before/ after method execution
+
+## TypeORM
+
+### Model define
+
+```
+@Entity({ name: 'Brands' })
+export class Brand {
+  @PrimaryGeneratedColumn()
+  id: number;
+}
+```
+
+### ManyToOne
+
+```
+@Column()
+category_id: number;
+@ManyToOne(() => Category, (category) => category.brands, {
+  cascade: true,
+  onDelete: 'CASCADE',
+})
+@JoinColumn({ name: 'category_id' })
+category: Category;
+```
+- Define ManyToOne is define foreign key constraint
+
+- Use *@OneToMany, @ManyToOne* is required
+
+- `@ManyToOne(() => Category)`, this line will create column "categoryId“ in the table, to change change this name can specify the join column name `@JoinColumn({ name: "category_id" })`
+
+### Notes
+
+- nest g module --name for modules nest g controller --name for controller nest g service for --name for service
+
+- constructor (private readonly name: serviceName){}
+
+- @Get() /items @Get('id') /item/id
+
+- getAll(@Param('id') id: string) {}
+
+- itemRepository extract item from tbale
+
+- fix metadata was not found => import typeorm module forFeature

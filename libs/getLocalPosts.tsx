@@ -7,11 +7,11 @@ import CustomMDXComponents from "@/app/components/mdx/MDXComponents";
 import ImageFigure from "@/app/components/mdx/ImageFigure";
 import remarkGfm from "remark-gfm";
 import Short from "@/app/components/Short";
-import { convertMM_DDToDD_MM } from "@/app/utils/appHelper";
 
-
-
-export async function getPostByName(fileName: string, directory: "notes" | "blogposts") {
+export async function getPostByName(
+  fileName: string,
+  directory: "notes" | "blogposts",
+) {
   try {
     const postDirectory = path.join(process.cwd(), directory);
     if (!fileName.endsWith(".mdx")) return;
@@ -52,7 +52,7 @@ export async function getPostByName(fileName: string, directory: "notes" | "blog
     };
 
     return blogPostObj;
-  } catch (error) { }
+  } catch (error) {}
 }
 
 export async function getAllPosts(directory: "notes" | "blogposts") {
@@ -70,7 +70,9 @@ export async function getAllPosts(directory: "notes" | "blogposts") {
     }
   }
 
-  postsMeta.sort((a, b) => convertMM_DDToDD_MM(b.date).getDate() - convertMM_DDToDD_MM(a.date).getDate());
+  postsMeta.sort(
+    (a, b) => new Date(b.date).getDate() - new Date(a.date).getDate(),
+  );
 
   return postsMeta;
 }

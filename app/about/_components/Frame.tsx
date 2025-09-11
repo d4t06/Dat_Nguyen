@@ -10,7 +10,7 @@ export default function Frame({ children }: { children: ReactNode }) {
             </div>
 
             <div
-                style={{ fontFamily: `"abc", "Courier New", Courier, monospace`, fontWeight: 400 }}
+                // style={{ fontFamily: `"abc", "Courier New", Courier, monospace`, fontWeight: 400 }}
                 className="px-4 py-6 text-lg md:text-2xl bg-slate-900 md:px-10 md:py-12"
             >
                 {children}

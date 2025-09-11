@@ -93,7 +93,7 @@ one-on-one chatting and group chatting"
 					/>
 
 					<OtherProjectItem
-						demoLink="https://github.com/d4t06/Argo-Store-React-Native"
+						// demoLink="https://github.com/d4t06/Argo-Store-React-Native"
 						desc="Clone of Grocery Store built with React Native"
 						gitLink="https://github.com/d4t06/Argo-Store-React-Native"
 						name="Clone of Grocery Store"
@@ -124,7 +124,7 @@ one-on-one chatting and group chatting"
 					/>
 
 					<OtherProjectItem
-						demoLink="https://github.com/d4t06/OpenCore-Dell_5270"
+						// demoLink="https://github.com/d4t06/OpenCore-Dell_5270"
 						desc="Opencore EFI MacOS 10.15 Catalina for Dell 5270 laptop"
 						gitLink="https://github.com/d4t06/OpenCore-Dell_5270"
 						name="Hackintosh"

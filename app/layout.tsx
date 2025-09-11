@@ -1,6 +1,9 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import localFont from "next/font/local";
 import "./globals.css";
+import defaultTheme from "tailwindcss/defaultTheme";
+
 
 export const metadata = {
   title: "Dat Nguyen",
@@ -11,6 +14,11 @@ export const metadata = {
     "I'm Nguyen Huu Dat - a final-year Software Engineering student at Can Tho University with a strong passion for web technologies seeking an job opportunity.",
 };
 
+const _font = localFont({
+  src: "./SpaceGrotesk-VariableFont.ttf",
+  weight: "400 700",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -19,7 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="transition-colors bg-white dark:bg-slate-800 dark:text-white">
+      <body
+        style={{
+          fontFamily:
+            _font.style.fontFamily + "," + defaultTheme.fontFamily.sans.join(","),
+        }}
+
+       className="transition-colors bg-white dark:bg-slate-800 dark:text-white">
         <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
           <Navbar />
           {children}

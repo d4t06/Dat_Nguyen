@@ -14,7 +14,7 @@ export default function AboutPage() {
 
 				<br />
 				<p className="text-white">
-					Hello! I&apos;m Dat Nguyen
+					Hello! I&apos;m Nguyen Huu Dat
 					<br />
 					<br />
 					I&apos;m a final-year Software Engineering student at Can Tho
@@ -52,6 +52,23 @@ export default function AboutPage() {
 					<li>Ability to learn and apply new technology quickly</li>
 				</ul>
 			</Frame>
+
+			<Frame>
+				<p>
+					<span className="text-purple-400">
+						datnguyen
+						<span className="text-green-400"> (master) $ </span>
+					</span>
+					<span className="text-white">cat education</span>
+				</p>
+				<br />
+				<p className="text-purple-400">8/2021 - 12/2025 </p>
+				<br />
+				<p>Software Engineering - Bachelor | Can Tho University</p>
+				<br />
+				<p>Current GPA 3.0/ 4</p>
+			</Frame>
+
 
 			<Frame>
 				<p>
@@ -105,6 +122,7 @@ export default function AboutPage() {
 				<p className="text-purple-400">English </p>
 				<br />
 				<p>Technical reading proficiency</p>
+				<p>Basic communication</p>
 			</Frame>
 		</div>
 	);

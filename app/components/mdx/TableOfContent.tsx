@@ -49,7 +49,7 @@ export default function TableOfContent({ content }: Props) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed md:hidden bg-white dark:bg-slate-800 p-1.5 bottom-5 left-10 [&_svg]:w-6 rounded"
+        className="fixed md:hidden bg-white dark:bg-slate-800 p-1.5 bottom-5 left-4 primary-shadow [&_svg]:w-6 rounded"
       >
         {isOpen ? xmarkIcon : menuIcon}
       </button>

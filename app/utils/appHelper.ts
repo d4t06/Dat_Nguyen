@@ -11,21 +11,19 @@ export const setLocalStorage = (key: string, value: any) => {
   return localStorage.setItem(KEY, JSON.stringify(storage));
 };
 
-export const convertMM_DDToDD_MM = (value: string) => {
-  const parts = value.split("-");
-  const day = parseInt(parts[0], 10);
-  const month = parseInt(parts[1], 10) - 1; // Subtract 1 for zero-indexed month
-  const year = parseInt(parts[2], 10);
-
-  return new Date(year, month, day);
-};
-
 export const dateFormatter = (dateString: string) => {
-  const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  const [day, month, year] = dateString.split("-");
+  // month start at 0
+  const date = new Date(+year, +month - 1, +day);
+
+  // Check if the date is valid.
+  if (isNaN(date.getTime())) return "Invalid Date";
+
+  const dateFormatter = new Intl.DateTimeFormat("en-GB", {
     dateStyle: "long",
   });
 
-  return dateFormatter.format(new Date(dateString));
+  return dateFormatter.format(new Date(date));
 };
 
 export default dateFormatter;

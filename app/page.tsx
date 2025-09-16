@@ -26,10 +26,8 @@ export default function Home() {
 
          <div className="mt-10 lg:ml-10 dark:text-white">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-center md:text-left">
-               <span className="text-red-500">
-                  Nguyen Huu Dat
-               </span>
-               {/*<span className="text-red-500 lg:hidden">Dat Nguyen</span>*/}
+               I&apos;m&nbsp;
+               <span className="text-red-500">Nguyen Huu Dat</span>
                &nbsp;
                <img
                   className="w-10 md:w-14 inline-block wave align-sub"
@@ -39,7 +37,7 @@ export default function Home() {
 
             <div className="text-xl r lg:text-2xl font-medium mt-5">
                <div>I&apos;m a student at Can Tho University</div>
-               <div>I like to  build web things</div>
+               <div>I like to build web things</div>
             </div>
 
             <div className="px-4 [&_p]:p-3 [&_img]:mr-4 [&_img]:pb-1 md:[&_p]:text-xl mt-3">

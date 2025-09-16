@@ -14,7 +14,7 @@ export default function TableOfContent({ content }: Props) {
   const getClassByLevel = (level: (typeof tableOfContents)[0]["level"]) => {
     switch (level) {
       case 2:
-        return "font-semibold";
+        return "font-bold text-lg main";
       case 3:
         return "ml-2.5 font-semibold";
       case 4:
@@ -33,7 +33,7 @@ export default function TableOfContent({ content }: Props) {
       >
         <div className="font-semibold text-2xl">Table of contents</div>
 
-        <div className="flex-grow overflow-auto mt-3 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5  [&_a]:rounded space-y-1 ">
+        <div className="toc flex-grow overflow-auto mt-3 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5 [&_a]:rounded space-y-1 [&_a.active]:text-red-500">
           {tableOfContents.map((t, i) => (
             <Link
               key={i}

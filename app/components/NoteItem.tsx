@@ -16,7 +16,7 @@ export default function NoteItem({
       className="transition-transform dark:bg-slate-900 rounded-xl border border-black dark:border-white overflow-hidden hover:translate-y-2"
     >
       <div className="pt-[45%] relative">
-        <div className="absolute inset-0 dark:bg-white">
+        <div className="absolute inset-0">
           <CustomImage
             className="h-full w-full mx-auto object-cover"
             alt=""
@@ -31,7 +31,7 @@ export default function NoteItem({
             postMeta.tags.map((tag, i) => {
               return (
                 <span
-                  className="opacity-[.8] text-sm px-3 py-1 border border-black dark:border-white rounded-full"
+                  className="opacity-[.8] text-sm px-3 py-1 border border-black dark:border-white font-medium rounded-full"
                   key={i}
                 >
                   {tag}

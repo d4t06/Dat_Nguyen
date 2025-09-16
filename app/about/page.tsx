@@ -48,7 +48,7 @@ export default function AboutPage() {
 					<li>
 						Proficiency in operating systems: Linux (Ubuntu, OSX), Windows
 					</li>
-					<li>Have knowledge in PC Hardware components and Software</li>
+					<li>Have knowledge in PC Hardware components</li>
 					<li>Ability to learn and apply new technology quickly</li>
 				</ul>
 			</Frame>

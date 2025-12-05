@@ -36,7 +36,7 @@ export default function Home() {
             </div>
 
             <div className="text-xl r lg:text-2xl font-medium mt-5">
-               <div>I&apos;m a student at Can Tho University</div>
+               <div>I&apos;m a fresher developer</div>
                <div>I like to build web things</div>
             </div>
 
@@ -46,7 +46,7 @@ export default function Home() {
                      className="w-6 md:w-7 lg:w-8 inline-block translate-y-[-2px]"
                      src="/images/place.png"
                   />
-                  Can Tho, Viet Nam
+                  An Giang, Viet Nam
                </p>
                <p>
                   <img

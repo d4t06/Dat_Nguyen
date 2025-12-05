@@ -13,17 +13,28 @@ export default function AboutPage() {
 				</p>
 
 				<br />
-				<p className="text-white">
-					Hello! I&apos;m Nguyen Huu Dat
+				<p className="text-white leading-[1.5]">
+					Hello! I&apos;m Nguyen Huu Dat, a fresher developer from Viet Nam
 					<br />
 					<br />
-					I&apos;m a final-year Software Engineering student at Can Tho
-					University with a strong passion for web technologies seeking an job
-					opportunity.
+					My core skills are based on
+					JavaScript and I love to do most of the things using JavaScript also
+					TypeScript.
+					<br />
+					<br />
+					I have graduated with a bachelor's degree (GPA 3/4) in Software
+					Engineering from Can Tho University at Can Tho, Vietnam in 2025.
+					<br />
+					<br />
+					I'm seeking an job opportunity.
 					<br />
 					<br />
 					See&nbsp;
-					<a href="https://raw.githubusercontent.com/d4t06/Dat_Nguyen_Resource/master/Nguyen_Huu_Dat_cv.pdf" target="_blank" className="underline">
+					<a
+						href="https://raw.githubusercontent.com/d4t06/Dat_Nguyen_Resource/master/Nguyen_Huu_Dat_cv.pdf"
+						target="_blank"
+						className="underline"
+					>
 						my CV
 					</a>
 				</p>
@@ -66,9 +77,8 @@ export default function AboutPage() {
 				<br />
 				<p>Software Engineering - Bachelor | Can Tho University</p>
 				<br />
-				<p>Current GPA 3.0/ 4</p>
+				<p>GPA 3.0/ 4</p>
 			</Frame>
-
 
 			<Frame>
 				<p>
@@ -110,13 +120,14 @@ export default function AboutPage() {
 				<div className="grid grid-cols-2 text-white">
 					<p>Vue</p> <p>Nuxt</p> <p>Angular</p>
 					<p>Spring Boot</p> <p>React Native</p>
-					<p>Flutter</p>
+					<p>Flutter</p> <p>Docker</p>
 				</div>
 				<br />
 				<p className="text-purple-400">Tool </p>
 				<br />
 				<div className="grid grid-cols-2 text-white">
-					<p>Git</p> <p>Docker</p>
+					<p>Git</p>
+					<p>Figma</p>
 				</div>
 				<br />
 				<p className="text-purple-400">English </p>

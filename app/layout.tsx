@@ -11,7 +11,7 @@ export const metadata = {
     google: "Zr0gom2JXEgWZu3IFSKVXYDqC885w4kSH7cHdQZyaqA",
   },
   description:
-    "I'm Nguyen Huu Dat - a final-year Software Engineering student at Can Tho University with a strong passion for web technologies seeking an job opportunity.",
+    "Hi!, I'm Nguyen Huu Dat, a fresher developer and I'm seeking an job opportunity.",
 };
 
 const _font = localFont({
@@ -34,7 +34,7 @@ export default function RootLayout({
         }}
 
        className="transition-colors bg-white dark:bg-slate-800 dark:text-white">
-        <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
+        <div className="md:min-h-screen pt-[60px] container md:!w-3/4 px-3 mx-auto md:flex md:flex-col">
           <Navbar />
           {children}
           <Footer />

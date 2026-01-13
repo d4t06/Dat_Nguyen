@@ -7,6 +7,11 @@ import CustomMDXComponents from "@/app/components/mdx/MDXComponents";
 import ImageFigure from "@/app/components/mdx/ImageFigure";
 import remarkGfm from "remark-gfm";
 import Short from "@/app/components/Short";
+import rehypePrettyCode, { type Options } from "rehype-pretty-code";
+
+const options: Options = {
+  theme: "one-dark-pro",
+};
 
 export async function getPostByName(
   fileName: string,
@@ -33,6 +38,7 @@ export async function getPostByName(
         parseFrontmatter: true,
         mdxOptions: {
           remarkPlugins: [remarkGfm],
+          rehypePlugins: [[rehypePrettyCode, options] as any],
         },
       },
     });
@@ -52,7 +58,9 @@ export async function getPostByName(
     };
 
     return blogPostObj;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getAllPosts(directory: "notes" | "blogposts") {
@@ -70,8 +78,11 @@ export async function getAllPosts(directory: "notes" | "blogposts") {
     }
   }
 
+  // convert dd-mm-yyyy to yyyy-mm-dd
+  const convertStringDate = (s: string) => s.split("-").reverse().join('-')
+
   postsMeta.sort(
-    (a, b) => new Date(b.date).getDate() - new Date(a.date).getDate(),
+    (a, b) => new Date(convertStringDate(b.date)).getTime() - new Date(convertStringDate(a.date)).getTime(),
   );
 
   return postsMeta;

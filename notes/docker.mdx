@@ -6,6 +6,37 @@ image: "/images/notes/docker.png"
 ---
 
 
+## Docker conatiner lifecycle
+
+<CustomImage
+  src="/images/notes/docker/docker_states.png"
+  width={1080*.7}
+  height={577*.7}
+/>
+
+Command | Starting State | Action
+| :--- | :--- | :--- |
+| **`docker run`** | Image (None) | **create** + **start** it. |
+| **`docker start`** | Stopped | Resumes an **existing** container. |
+| **`docker restart`** | Running/Stopped | **stop** + **start**. |
+| **`docker unpause`** | Paused | Resumes **frozen** processes in memory. |
+
+
+### Core Distinctions
+
+> **Pro Tip:** Use `docker run` for new instances and `docker start` to resume work on an existing container to preserve file changes not saved in a volume.
+
+
+### When to use which?
+
+1.  **`run`**: Your "Go-To" for launching a service for the first time.
+2.  **`start`**: When you've previously stopped a container with `docker stop` and want it back.
+3.  **`restart`**: Best for clearing memory leaks or applying config changes.
+4.  **`unpause`**: Best for ultra-fast resumption without the overhead of a full boot cycle.
+
+
+
+## Run new docker image
 
 ```
 docker run -d -p 49161:1521 -p 5000:8080 -v db-vol:/opt/oracle/oradata oracleinanutshell/oracle-xe-11g
@@ -15,8 +46,31 @@ docker run -d -p 49161:1521 -p 5000:8080 -v db-vol:/opt/oracle/oradata oracleina
 - ``-p``: Port mapping from container port `8080` to client port `5000`
 - ``-v``: Mount data volume
 
-#### Remove old container
+## Command
 
-```
-docker system prune
-```
+### Image management
+
+
+`docker image inspect`: See image info
+
+`docker image prune`: Delete unsed images
+
+`docker rmi <image_id>`: Remove image from local storage
+
+`docker build -t <name> .`: Create a custom image from a Dockerfile in your current directory.
+
+### Container management 
+
+`docker ps -a`: List all container
+
+`docker rm`: Delete a stopped container
+
+`docker kill <container_id>`: Force stop the container
+
+`docker stop <container_id>`: Stop the container
+
+### Clean up
+
+`docker system df`: Amount of storage docker used
+
+`docker system prune`: Removes all stopped containers, unused networks, and dangling images.

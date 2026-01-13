@@ -1,0 +1,138 @@
+---
+title: "Django"
+date: "5-1-2026"
+tags: ["Django"]
+image: "/images/notes/py_django.png"
+---
+
+## Good practices
+
+1. Move all logic to model or service, keep the view simple
+
+2. Define custom model manger for reuse db query
+
+3. Don't edit migration once it have been applied
+
+4. Alway validate user input (use Django form, use serializer for API end points, never trust user input)  
+
+5. Don't expose sensitive date to url (Put these in body of POST request for sensitive operations)
+
+6. Use asynchronous operation return the response immediately
+
+7. Alway escaping user content, it's dangerouse to use `|safe` filter
+
+8. Development server is single thread, use UWSGI is minimum for production, collect static files using White Noise
+
+9. Keep Django update, take advance of built-in features  
+
+
+# Config for MySQL
+
+```
+sudo dnf install python3-devel mysql-devel gcc
+python -m pip install mysqlclient
+
+```
+
+# Create model and run migrate
+
+```
+*myapp/models.py*
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.Text("date published")
+```
+
+- Assign myapp to mysite
+
+```
+INSTALLED_APPS = [
+    "myapp.apps.MyappConfig",
+    "django.contrib.admin",
+    ...
+]
+```
+
+- Create new my app migration file
+
+```
+python manage.py makemigrations myapp
+```
+
+- Get their sql
+
+```
+python manage.py sqlmigrate myapp 0001
+```
+
+- Create model table in database
+
+```
+python manage.py migrate
+```
+
+# Create simple homepage
+
+```
+/templates/layout.html
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>This is header</h1>
+
+        {% block content %}
+        {% endblock %}
+
+        <h1>This is footer</h1>
+    </body>
+</html>
+```
+
+```
+/templates/index.html
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>This is index.html</h1>
+{% endblock %}
+
+```
+
+```
+/mysite/settings.py
+
+TEMPLATES = [
+    {
+        'DIRS': ['templates'],
+        ...
+    },
+]
+
+```
+
+```
+/mysite/views.py
+
+def index (req):
+    return render(req, "index.html")
+
+```
+
+```
+/mysite/urls.py
+
+urlpatterns = [
+    path('', views.index, name="lobby"),
+    ...
+]
+
+```

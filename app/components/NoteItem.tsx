@@ -13,9 +13,9 @@ export default function NoteItem({
   return (
     <Link
       href={`/${postfix}/${id}`}
-      className="transition-transform dark:bg-slate-900 rounded-xl border border-black dark:border-white overflow-hidden hover:translate-y-2"
+      className="transition-transform dark:bg-slate-900 rounded-xl border border-black overflow-hidden hover:translate-y-2"
     >
-      <div className="pt-[45%] relative">
+      <div className="pt-[45%] relative dark:bg-gray-300">
         <div className="absolute inset-0">
           <CustomImage
             className="h-full w-full mx-auto object-cover"

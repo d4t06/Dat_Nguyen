@@ -22,11 +22,11 @@ export default function AboutPage() {
 					TypeScript.
 					<br />
 					<br />
-					I have graduated with a bachelor's degree (GPA 3/4) in Software
+					I have graduated with a bachelor&apos;s degree (GPA 3/4) in Software
 					Engineering from Can Tho University at Can Tho, Vietnam in 2025.
 					<br />
 					<br />
-					I'm seeking an job opportunity.
+					I&apos;m seeking an job opportunity.
 					<br />
 					<br />
 					See&nbsp;

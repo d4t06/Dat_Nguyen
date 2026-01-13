@@ -1,0 +1,25 @@
+---
+title: "JS"
+date: "7-1-2026"
+tags: ["JS"]
+image: "/images/notes/js.png"
+---
+
+```js
+for (var i = 1; i <= 5; i++) {
+  setTimeout(function() {
+    console.log(i); // This function forms a closure
+  }, i * 1000);
+}
+// Output: 6, 6, 6, 6, 6 (printed after 1, 2, 3, 4, 5 seconds)
+
+for (let i = 1; i <= 5; i++) {
+  setTimeout(function() {
+    console.log(i); // This function forms a closure
+  }, i * 1000);
+}
+// Output: 1, 2, 3, 4, 5 (printed sequentially after 1, 2, 3, 4, 5 seconds)
+
+```
+
+Rest - Spread operator

@@ -33,10 +33,12 @@ export default function useTableOfContent({ content }: Props) {
       } else if (line.startsWith("## ")) {
         level = 2;
         text = line.substring(3).trim();
-      } else if (line.startsWith("# ")) {
-        level = 1;
-        text = line.substring(2).trim();
       }
+      /* ignore code block comment */
+      // else if (line.startsWith("# ")) {
+      //   level = 1;
+      //   text = line.substring(2).trim();
+      // }
 
       if (level > 0 && text.length > 0) {
         headings.push({

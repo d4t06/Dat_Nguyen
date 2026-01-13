@@ -33,7 +33,7 @@ export default function BlogPostLayout({
           <br />
 
           <MDXWrapper>
-            <div className="prose max-w-[unset]  prose-base prose-slate dark:prose-invert [&_img]:mx-auto [&_div.not-prose_img]:max-w-full md:[&_img]:max-w-[60%] [&_img]:rounded-md [&_iframe]:rounded-md">
+            <div className="prose max-w-[unset]  prose-base prose-slate dark:prose-invert [&_img]:mx-auto [&_div.not-prose_img]:max-w-full md:[&_img]:max-w-[70%] [&_img]:rounded-md [&_iframe]:rounded-md">
               {content}
             </div>
 

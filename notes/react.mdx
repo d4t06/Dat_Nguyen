@@ -1,0 +1,113 @@
+---
+title: "React"
+date: "12-1-2026"
+tags: ["Angular"]
+image: "/images/notes/react.png"
+---
+
+## Trick
+
+### Make sure elementRef defined before use
+
+```js
+const { audioRef } = usePlayerContext();
+
+const [_hasAudio, setHasAudio] = useState(false);
+
+useEffect(() => {
+  setHasAudio(true);
+}, []);
+
+return (
+  <>
+    <audio ref={audioRef} className="hidden" />
+
+    {audioRef.current && (
+      <PlayerEffect audioEle={audioRef.current}>
+        {isOnMobile ? mobileContent : desktopContent}
+      </PlayerEffect>
+    )}
+  </>
+);
+```
+
+```js
+export default function PlayerEffect({ children, audioEle }: Props) {
+  const { isOnMobile } = useThemeContext();
+
+  usePlayerEffect();
+  useCountDown();
+  useIdle(appConfig.focusDelay, isOnMobile);
+  usePlayCount({ audioEle });
+
+  return useMemo(() => children, []);
+}
+
+```
+
+### Handle auto remove toast
+
+```js
+  const { setToasts, toasts } = useToastContext();
+  const [removing, setRemoving] = useState("");
+
+  const removeToast = (id: string) => {
+    setToasts((t) => t.filter((toast) => toast.id != id));
+  };
+
+  useEffect(() => {
+    if (removing) setToasts((t) => t.filter((toast) => toast.id != removing));
+  }, [removing]);
+
+  useEffect(() => {
+    if (!toasts.length) return;
+
+    const id = toasts[toasts.length - 1].id;
+    setTimeout(() => setRemoving(id), time);
+  }, [toasts]);
+```
+
+### Exposing methods to global ref
+
+```js
+const { controlRef } = usePlayerContext();
+
+useImperativeHandle(controlRef, () => ({
+  pause,
+  play,
+  handlePlayPause,
+}));
+```
+
+### Create type from string array
+
+```ts
+const tabs = ["Favorite", "Own"] as const;
+type Tab = (typeof tabs)[number];
+```
+
+### Init fetch
+
+```js
+const [tab, setTab] = useState<Tab | "">("");
+
+useEffect(() => {
+  const initRun = async () => {
+    const lastTab = getLocalStorage()["last_playlist_tab"] as Tab;
+
+    await getPlaylist(lastTab);
+    setTab(lastTab || 'Favorite');
+  };
+
+  if (!ranEffect.current) {
+    ranEffect.current = true;
+    initRun();
+  }
+});
+
+useEffect(() => {
+  if (!tab) return;
+
+  getPlaylist();
+}, [tab]);
+```

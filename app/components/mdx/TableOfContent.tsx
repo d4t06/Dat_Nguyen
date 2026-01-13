@@ -16,9 +16,9 @@ export default function TableOfContent({ content }: Props) {
       case 2:
         return "font-bold text-lg main";
       case 3:
-        return "ml-2.5 font-semibold";
+        return "ml-2.5 font-semibold opacity-[.8]";
       case 4:
-        return "ml-5";
+        return "ml-5 opacity-[.7]";
       default:
         return "";
     }
@@ -33,7 +33,7 @@ export default function TableOfContent({ content }: Props) {
       >
         <div className="font-semibold text-2xl">Table of contents</div>
 
-        <div className="toc flex-grow overflow-auto mt-3 hover:[&_a]:bg-black/5 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5 [&_a]:rounded space-y-1 [&_a.active]:text-red-500">
+        <div className="toc flex-grow overflow-auto mt-3 hover:[&_a]:bg-black/5  hover:[&_a]:opacity-100 dark:hover:[&_a]:bg-white/5 [&_a]:py-1 [&_a]:px-2.5 [&_a]:rounded space-y-1 [&_a.active]:text-red-500">
           {tableOfContents.map((t, i) => (
             <Link
               key={i}

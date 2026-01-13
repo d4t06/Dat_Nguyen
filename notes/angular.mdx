@@ -1,6 +1,6 @@
 ---
 title: "Angular"
-date: "1-7-2025"
+date: "7-1-2025"
 tags: ["Angular"]
 image: "/images/notes/angular.png"
 ---
@@ -16,18 +16,19 @@ image: "/images/notes/angular.png"
 ## Access 'this' key work in  callback function
 
 - Use bind() method:
-```
+```js
 window.addEventListener("mousedown", this.handleClickOutside.bind(this));
 ```
 - Use arrow function:
-```
+```js
   handleClickOutside = (e: Event) => {}
 ```
 
 ## Directive
 
-```
-<ng-content/> can only exist once
+**<ng-content/>** can only exist once
+
+```html
 <ng-template #projected>
   <ng-content/>
 </ng-template>
@@ -101,13 +102,27 @@ window.addEventListener("mousedown", this.handleClickOutside.bind(this));
 
 ## ElementRef
 
-```
+```html
 <input type="text" #usernameInput />
 <button (click)="handleClick(usernameInput)">Click</button>
 ```
 
 - Use **@Viewchild()** to access element
 
-```
+```js
 @ViewChild('usernameInput', {static: true}) usernameInput: ElementRef;
 ```
+
+
+## Promise vs Observable
+
+| Feature | Promise | Observable (RxJS) |
+| :--- | :--- | :--- |
+| **Data Pattern** | **Push:** Sends a single data packet and closes. | **Stream:** Can push multiple values over a period of time. |
+| **Sync vs Async** | Always **Asynchronous**. | Can be **Synchronous or Asynchronous**. |
+| **State** | Only three states: Pending, Resolved, Rejected. | Manages a lifecycle: Start, Next (data), Error, and Complete. |
+| **Execution** | **Eager:** The code inside runs as soon as the Promise is created. | **Lazy:** The producer function only runs when `.subscribe()` is called. |
+| **Cancellation** | **Not native:** Hard to stop a fetch request once it starts. | **Native:** Calling `unsubscribe()` stops the work and cleans up memory. |
+| **Retry Logic** | Difficult; requires manual recursion or utility functions. | Easy; has built-in operators like `retry()` or `retryWhen()`. |
+| **Transformations** | Limited to `.then()` chaining. | Extremely powerful via **Pipeable Operators** (map, filter, switchMap). |
+| **Multiple Listeners**| **Multicast:** All listeners get the same resolved value. | **Unicast by default:** Each subscriber starts a new execution of the observable. |

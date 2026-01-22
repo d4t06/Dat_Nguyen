@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import defaultTheme from "tailwindcss/defaultTheme";
 
-
 export const metadata = {
   title: "Dat Nguyen",
   verification: {
@@ -25,16 +24,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head />
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        (function() {
+          const theme = localStorage.getItem('theme') || 'light';
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+
+          console.log('run')
+        })()
+      `,
+          }}
+        />
+      </head>
       <body
         style={{
           fontFamily:
-            _font.style.fontFamily + "," + defaultTheme.fontFamily.sans.join(","),
+            _font.style.fontFamily +
+            "," +
+            defaultTheme.fontFamily.sans.join(","),
         }}
-
-       className="transition-colors bg-white dark:bg-slate-800 dark:text-white">
-        <div className="md:min-h-screen pt-[60px] container md:!w-3/4 px-3 mx-auto md:flex md:flex-col">
+        className="bg-white dark:bg-slate-800 dark:text-white"
+      >
+        <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
           <Navbar />
           {children}
           <Footer />

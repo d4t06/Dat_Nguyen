@@ -5,77 +5,95 @@ tags: ["Django"]
 image: "/images/notes/py_django.png"
 ---
 
-## Good practices
+## Standard layout
 
-1. Move all logic to model or service, keep the view simple
+```bash
+myproject/            <-- [Root Directory]
+├── manage.py         <-- Project management tool
+├── myproject/        <-- [Project Configuration Folder]
+│   ├── __init__.py
+│   ├── settings.py   <-- Database, installed apps, static files config
+│   ├── urls.py       <-- Master URL routing
+│   ├── asgi.py       <-- Entry point for async web servers
+│   └── wsgi.py       <-- Entry point for standard web servers
+│
+├── notes/            <-- [App Folder]
+│   ├── migrations/   <-- Database history
+│   ├── admin.py      <-- Admin panel configuration
+│   ├── apps.py       <-- App-specific configuration
+│   ├── models.py     <-- Database schema definitions
+│   ├── tests.py      <-- Automated tests
+│   ├── urls.py       <-- App-specific URL routing (created manually)
+│   └── views.py      <-- Logic for processing requests
+│
+├── static/           <-- CSS, JS, Images, and your .md notes
+├── templates/        <-- HTML files
+└── db.sqlite3        <-- Default database (created after migrations)
+```
 
-2. Define custom model manger for reuse db query
-
-3. Don't edit migration once it have been applied
-
-4. Alway validate user input (use Django form, use serializer for API end points, never trust user input)  
-
-5. Don't expose sensitive date to url (Put these in body of POST request for sensitive operations)
-
-6. Use asynchronous operation return the response immediately
-
-7. Alway escaping user content, it's dangerouse to use `|safe` filter
-
-8. Development server is single thread, use UWSGI is minimum for production, collect static files using White Noise
-
-9. Keep Django update, take advance of built-in features  
-
-
-# Config for MySQL
+## Config for MySQL
 
 ```
 sudo dnf install python3-devel mysql-devel gcc
 python -m pip install mysqlclient
-
 ```
 
-# Create model and run migrate
+## Create model and run migrate
 
-```
-*myapp/models.py*
+```py
+# myapp/models.py
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     body = models.Text("date published")
 ```
 
-- Assign myapp to mysite
+Assign myapp to mysite
+```py
+# myapp/urls.py
 
+app_name = "myapp"
+
+urlpatterns = [
+    path('', views.index),
+    path("<str:note_slug>/", views.note_detail, name="note_detail"),
+    path('admin/', admin.site.urls),
+    path("myapp/", include("myapp.urls")),
+]
 ```
+
+```py
+# mysite/settings.py
+
 INSTALLED_APPS = [
-    "myapp.apps.MyappConfig",
     "django.contrib.admin",
+    'myapp',
     ...
 ]
 ```
 
-- Create new my app migration file
+Create new my app migration file
 
 ```
 python manage.py makemigrations myapp
 ```
 
-- Get their sql
+Get their sql (optional)
 
 ```
 python manage.py sqlmigrate myapp 0001
 ```
 
-- Create model table in database
+Migrate table in database
 
 ```
 python manage.py migrate
 ```
 
-# Create simple homepage
+## Create simple homepage
 
-```
-/templates/layout.html
+```html
+// templates/layout.html
 
 <!doctype html>
 {% load static %}
@@ -84,6 +102,7 @@ python manage.py migrate
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        {% block extra_css %} {% endblock %}
     </head>
     <body>
         <h1>This is header</h1>
@@ -96,10 +115,18 @@ python manage.py migrate
 </html>
 ```
 
-```
-/templates/index.html
+```html
+// templates/index.html
 
 {% extends 'layout.html' %}
+{% block extra_css %}
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/one-dark.css' %}"
+    />
+{% endblock %}
+
 
 {% block content %}
     <h1>This is index.html</h1>
@@ -107,8 +134,8 @@ python manage.py migrate
 
 ```
 
-```
-/mysite/settings.py
+```py
+# mysite/settings.py
 
 TEMPLATES = [
     {
@@ -119,20 +146,32 @@ TEMPLATES = [
 
 ```
 
-```
-/mysite/views.py
+```py
+# mysite/views.py
 
 def index (req):
     return render(req, "index.html")
 
 ```
 
-```
-/mysite/urls.py
+```py
+# mysite/urls.py
 
 urlpatterns = [
     path('', views.index, name="lobby"),
     ...
 ]
 
+```
+
+## Run django
+
+```
+python manage.py runserver
+```
+
+## Set up SCSS
+
+```
+python manage.py sass static/scss static/css --watch
 ```

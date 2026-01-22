@@ -44,7 +44,7 @@ export default function Home() {
                <p>
                   <img
                      className="w-6 md:w-7 lg:w-8 inline-block translate-y-[-2px]"
-                     src="/images/place.png"
+                     src="/images/house.png"
                   />
                   An Giang, Viet Nam
                </p>
@@ -53,7 +53,7 @@ export default function Home() {
                      className="w-6 md:w-7 lg:w-8 inline-block"
                      src="/images/heart_start.png"
                   />
-                  React, TypeScript
+                  JavaScript, Tech Gears
                </p>
                <p>
                   <img

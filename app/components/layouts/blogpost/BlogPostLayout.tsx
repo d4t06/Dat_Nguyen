@@ -7,13 +7,13 @@ import dateFormatter from "@/app/utils/appHelper";
 export default function BlogPostLayout({
   meta,
   content,
-  rawContent,
+  headings,
   children,
 }: BlogPost & { children?: ReactNode }) {
   return (
     <>
       <div className="flex w-ful mt-10 flex-wrap items-start">
-        <TableOfContent content={rawContent} />
+        <TableOfContent headings={headings} />
 
         <div className="p-3 md:p-5 w-full md:w-3/4 ml-auto text-black dark:text-white bg-amber-100 dark:bg-slate-900 rounded-xl">
           {meta.image && (

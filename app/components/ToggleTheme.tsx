@@ -1,7 +1,7 @@
 "use client";
 
 import { moonIcon, sunIcon } from "@/public/icon";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { getLocalStorage, setLocalStorage } from "../utils/appHelper";
 
 export default function ToggleTheme() {
@@ -26,13 +26,13 @@ export default function ToggleTheme() {
 				onClick={() => toggleDarkMode(true)}
 				className="sun ml-3 hover:text-red-500 w-7"
 			>
-				{sunIcon}
+				<img className="w-7 inline-block mx-1" src="/images/sun.png" />
 			</button>
 			<button
 				onClick={() => toggleDarkMode(false)}
 				className="moon ml-3 hover:text-red-500 w-7"
 			>
-				{moonIcon}
+				<img className="w-7 inline-block mx-1" src="/images/moon.png" />
 			</button>
 		</>
 	);

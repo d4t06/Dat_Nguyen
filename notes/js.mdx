@@ -1,9 +1,11 @@
 ---
-title: "JS"
+title: "JavaScript"
 date: "7-1-2026"
-tags: ["JS"]
+tags: ["JavaScript"]
 image: "/images/notes/js.png"
 ---
+
+## let and var in for loop
 
 ```js
 for (var i = 1; i <= 5; i++) {
@@ -22,4 +24,177 @@ for (let i = 1; i <= 5; i++) {
 
 ```
 
-Rest - Spread operator
+
+## Revealing module pattern
+
+Turn this object litera into a module that only exposes specific methods
+
+```js
+let myModule = (() => {
+  const _data = []
+
+  const _add = () => {}
+  const _remove = () => {}
+
+  return {
+    add: _add,
+    remove: _remove
+  }
+  
+})()
+// Immediately Invoked Function Expression (IIFE)
+```
+
+## ASI
+
+```js
+let obj = {a:123}
+[obj].forEach() // error
+
+let obj = {a:123};
+[obj].forEach() // {a: 123}
+```
+
+## Single pattern
+
+```js
+const SingletonClassic = (function () {
+  let instance;
+
+  function createInstance() {
+    let isRunning = false;
+
+    const start = () => (isRunning = true);
+    const stop = () => (isRunning = false);
+    const status = () => console.log(isRunning);
+
+    return { start, stop, status };
+  }
+
+  instance = createInstance();
+
+  return {
+    getInstance () {
+      return instance;
+    },
+  };
+})();
+
+const instanceA = SingletonClassic.getInstance();
+const instanceB = SingletonClassic.getInstance();
+
+instanceA.status() // false
+instanceB.status() // false
+
+instanceB.start()
+
+instanceA.status() // true
+instanceB.status() // true
+
+```
+
+## Closure
+
+```js
+function f1() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1000 * i); // 3 3 3
+  }
+
+  // i still access there
+}
+
+function f2() {
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1000 * i); // 0 1 2
+  }
+
+  // can;t access i there
+}
+
+// Using bind
+function f3() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(((x) => console.log(x)).bind(null, i), 1000 * i); // 0 1 2
+  }
+}
+
+
+// Using IIFE
+function f4() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(
+      (
+        (x) => () => console.log(x) // 0 1 2
+      )(i),
+      1000 * i,
+    );
+  }
+}
+
+```
+
+## Pre-populated array
+
+```js
+[...Array(5)].map(() => Math.random())
+[...Array(5).keys()] // 0 1 2 3 4 5
+```
+
+## Hoist
+
+**var** it's hoisted and assigned **undefined** as default value
+
+**let** is's hoisted but has no default value
+
+
+## Random hex color
+
+```js
+let n = Math.random()
+n = n.toStrig(16) // (hex, 0-9 a-f) => 0.f23be3234ae
+```
+
+## ParseInt
+
+```js
+// default parseInt radix is 10
+// map((v, i, arr) => {})
+
+let n = ['1', '7', '11'].map(n => parseInt(n)) // [1, NaN, 3]
+```
+
+## This keyword
+
+Arrow function is lexical scope
+
+```js
+const obj = {
+  a: "object value",
+  foo: () => {
+    console.log(this); // {}
+  },
+  bar: function() {
+    console.log(this); // {a: "object value"}
+  }
+};
+```
+
+## Check num is integer
+
+```js
+!isNaN(num) && parseInt(num) === num
+```
+
+## Array index
+
+```js
+const arr = [1];
+arr[3] = 5;
+
+for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i]); // 1 undefined undefined 5
+}
+
+arr.forEach((v) => console.log(v)); // 1 5
+```

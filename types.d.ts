@@ -10,4 +10,9 @@ type BlogPost = {
   meta: Meta;
   content: ReactElement<any, string | JSXElementConstructor<any>>;
   rawContent: string;
+  headings: {
+    text: string;
+    id: string;
+    level: number;
+  }[];
 };

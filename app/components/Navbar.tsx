@@ -27,14 +27,10 @@ function LinkItem({ children, href }: { children: ReactNode; href: string }) {
 
 function Navbar() {
    return (
-      <nav className="fixed left-0 w-full top-0 z-[99]">
-         <div
-            className={`absolute inset-0 transition-colors bg-white/70 dark:bg-slate-800/70  backdrop-blur-[15px] z-[-1]`}
-         ></div>
-
-         <div className="py-3 px-3 w-full md:w-3/4 mx-auto [&_a]:transition-[color] hover:[&_a]:text-red-500 flex flex-row md:flex-row justify-between">
+      <nav className="fixed left-0 w-full top-0 z-[99] bg-white/70 dark:bg-slate-800/70  backdrop-blur-[15px]">
+         <div className="py-3 px-3 w-full container mx-auto [&_a]:transition-[color] hover:[&_a]:text-red-500 flex flex-row md:flex-row justify-between">
             <Link href={"/"}>
-               <h1 className="text-3xl font-bold">DN</h1>
+               <h1 className="text-2xl font-semibold">Dat Nguyen</h1>
             </Link>
 
             <div className="font-medium hidden md:flex items-center space-x-5 [&_a]:inline-block [&_a]:py-1 [&_a]:text-lg [&_a]:text-[--text-muted-cl] [&_a.active]:text-[--text-cl]">

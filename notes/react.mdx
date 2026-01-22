@@ -7,7 +7,7 @@ image: "/images/notes/react.png"
 
 ## Trick
 
-### Make sure elementRef defined before use
+### ElementRef
 
 ```js
 const { audioRef } = usePlayerContext();
@@ -79,7 +79,7 @@ useImperativeHandle(controlRef, () => ({
 }));
 ```
 
-### Create type from string array
+### Type from string array
 
 ```ts
 const tabs = ["Favorite", "Own"] as const;
@@ -110,4 +110,11 @@ useEffect(() => {
 
   getPlaylist();
 }, [tab]);
+```
+
+### Get item by slug
+
+```js
+  const params = useParams<{id: string}>();
+  routeSlug = "/playlist/:id"
 ```

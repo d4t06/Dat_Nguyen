@@ -48,6 +48,7 @@ export async function getPostByName(
       },
       content,
       rawContent: rawMdx,
+      headings: []
    };
 
    return blogPostObj;

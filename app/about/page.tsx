@@ -2,14 +2,14 @@ import Frame from "./_components/Frame";
 
 export default function AboutPage() {
 	return (
-		<div className="page mt-10  space-y-10 md:space-y-24 text-white">
+		<div className="page md:w-3/4 mx-auto mt-10 space-y-10 md:space-y-24 text-white">
 			<Frame>
 				<p>
 					<span className="text-purple-400">
 						datnguyen
 						<span className="text-green-400"> (master) $ </span>
 					</span>
-					<span className="text-white"> cat datnguyen</span>
+					<span className="text-white"> cat about</span>
 				</p>
 
 				<br />
@@ -17,16 +17,12 @@ export default function AboutPage() {
 					Hello! I&apos;m Nguyen Huu Dat, a fresher developer from Viet Nam
 					<br />
 					<br />
-					My core skills are based on
-					JavaScript and I love to do most of the things using JavaScript also
-					TypeScript.
-					<br />
-					<br />
 					I have graduated with a bachelor&apos;s degree (GPA 3/4) in Software
 					Engineering from Can Tho University at Can Tho, Vietnam in 2025.
 					<br />
 					<br />
-					I&apos;m seeking an job opportunity.
+					My core skills are based on JavaScript and I&apos;m seeking an job
+					opportunity.
 					<br />
 					<br />
 					See&nbsp;
@@ -50,14 +46,10 @@ export default function AboutPage() {
 				</p>
 				<br />
 				<ul className="list-disc ml-6 [&_li]:mt-4">
+					<li>Proficiency in linux distros: Ubuntu, Fedora</li>
 					<li>Strengths: Front-end and Back-end web application development</li>
 					<li>
 						Familiarity with TypeScript and newer specifications of EcmaScript
-					</li>
-					<li>Basic use of Git for source code management</li>
-					<li>Basic use of Docker for containerizing applications</li>
-					<li>
-						Proficiency in operating systems: Linux (Ubuntu, OSX), Windows
 					</li>
 					<li>Have knowledge in PC Hardware components</li>
 					<li>Ability to learn and apply new technology quickly</li>
@@ -110,30 +102,15 @@ export default function AboutPage() {
 				<br />
 				<p className="text-purple-400">Proficient In </p>
 				<br />
-				<div className="grid grid-cols-2 text-white">
-					<p>React</p> <p>Next.js</p>
-					<p>Express</p> <p>NestJS</p>
-				</div>
-				<br />
-				<p className="text-purple-400">Others </p>
-				<br />
-				<div className="grid grid-cols-2 text-white">
-					<p>Vue</p> <p>Nuxt</p> <p>Angular</p>
-					<p>Spring Boot</p> <p>React Native</p>
-					<p>Flutter</p> <p>Docker</p>
-				</div>
-				<br />
-				<p className="text-purple-400">Tool </p>
-				<br />
-				<div className="grid grid-cols-2 text-white">
-					<p>Git</p>
-					<p>Figma</p>
+				<div className="grid grid-cols-2 gap-3 text-white">
+					<p>JavaScript</p>
+					<p>Linux</p>
+					<p>Hardware</p>
 				</div>
 				<br />
 				<p className="text-purple-400">English </p>
 				<br />
-				<p>Technical reading proficiency</p>
-				<p>Basic communication</p>
+				<p>Certificate: VSTEP level 4</p>
 			</Frame>
 		</div>
 	);

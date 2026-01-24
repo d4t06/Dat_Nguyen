@@ -1,8 +1,9 @@
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import localFont from "next/font/local";
 import "./globals.css";
 import defaultTheme from "tailwindcss/defaultTheme";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "Dat Nguyen",
@@ -25,22 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-        (function() {
-          const theme = localStorage.getItem('theme') || 'light';
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-          }
+      <head />
 
-          console.log('run')
-        })()
-      `,
-          }}
-        />
-      </head>
       <body
         style={{
           fontFamily:
@@ -48,15 +35,17 @@ export default function RootLayout({
             "," +
             defaultTheme.fontFamily.sans.join(","),
         }}
-        className="bg-white dark:bg-slate-800 dark:text-white"
+        className="bg-white text-black dark:bg-slate-800 dark:text-white"
       >
-        <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider attribute="class">
+          <div className="md:min-h-screen pt-[60px] container px-3 mx-auto md:flex md:flex-col">
+            <Header />
+            {children}
+            <Footer />
+          </div>
 
-        <div id="portal"></div>
+          <div id="portal"></div>
+        </ThemeProvider>
       </body>
     </html>
   );

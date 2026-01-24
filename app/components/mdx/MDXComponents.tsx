@@ -11,6 +11,7 @@ const CustomMDXComponents = {
   h4: ({ children }: Props) => <AutoHeading level={4}>{children}</AutoHeading>,
   h5: ({ children }: Props) => <AutoHeading level={5}>{children}</AutoHeading>,
   h6: ({ children }: Props) => <AutoHeading level={6}>{children}</AutoHeading>,
+  // code: ({ children }: Props) => <code className="before:content-none after:content-none">{children}</code>,
 };
 
 export default CustomMDXComponents;

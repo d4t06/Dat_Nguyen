@@ -5,7 +5,7 @@ tags: ["Django"]
 image: "/images/notes/py_django.png"
 ---
 
-## Standard layout
+## Basic
 
 ```bash
 myproject/            <-- [Root Directory]
@@ -31,14 +31,14 @@ myproject/            <-- [Root Directory]
 └── db.sqlite3        <-- Default database (created after migrations)
 ```
 
-## Config for MySQL
+**Config for MySQL**
 
 ```
 sudo dnf install python3-devel mysql-devel gcc
 python -m pip install mysqlclient
 ```
 
-## Create model and run migrate
+**Create model and run migrate**
 
 ```py
 # myapp/models.py
@@ -48,7 +48,8 @@ class Post(models.Model):
     body = models.Text("date published")
 ```
 
-Assign myapp to mysite
+**Assign myapp to mysite**
+
 ```py
 # myapp/urls.py
 
@@ -90,7 +91,7 @@ Migrate table in database
 python manage.py migrate
 ```
 
-## Create simple homepage
+**Create simple homepage**
 
 ```html
 // templates/layout.html
@@ -164,14 +165,172 @@ urlpatterns = [
 
 ```
 
-## Run django
+**Run django**
 
 ```
 python manage.py runserver
+```~/Documents/learn_django/mysite
+
+**Set up SCSS**
+
 ```
 
-## Set up SCSS
+## Filters
+
+```html
+<p class="">{{note.date |date:"M d Y"}}</p>
+
+<img
+    class="{{class |default:'w-full h-full object-cover'}}"
+    src="{% static '' %}{{url}}"
+/>
+```
+
+## Tailwind CSS
+
+```js
+"devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^3.4.19"
+}
+```
+
+```js
+// bs-config.js
+module.exports = {
+    proxy: "127.0.0.1:8000", // The address of your Django dev server
+    files: [
+        "static/css/*.css",
+        "static/js/*.js",
+        "static/notes/*.md",
+        "templates/**/*.html",
+        "app/**/templates/**/*.html",
+    ],
+    open: false, // Prevents the browser from opening automatically
+    reloadDelay: 300, // Wait tailwind complie css
+};
 
 ```
-python manage.py sass static/scss static/css --watch
+
+```js
+// package.json
+"scripts": {
+    "watch:css": "tailwindcss -i static/css/src/input.css -o static/css/output.css --watch",
+    "build:css": "tailwindcss -i static/css/src/input.css -o static/css/output.css --minify",
+    "sync": "browser-sync start --config sync-config.js",
+    "dev": "concurrently \"python manage.py runserver\" \"npm run watch:css\" \"npm run sync\""
+},
+```
+
+## Cotton
+
+Pass variable
+
+```html
+<c-note_item :note="note" />
+<!-- or -->
+<c-note_item note=note />
+```
+
+Pass value
+
+```html
+<c-image class="w-4 inline-block" url="images/heart.png" />
+```
+Naming convension: note_item.html
+
+Children: `{{slot}}`
+
+## Deploy to render
+
+```bash
+pip install gunicorn uvicorn whitenose
+pip freeze > requirements.txt
+```
+
+```bash
+# build.sh
+
+set -o errexit
+
+pip install -r requirements.txt
+
+python manage.py collectstatic --no-input
+
+python manage.py migrate
+```
+
+```py
+# settings.py
+
+DEBUG = 'RENDER' not in os.environ
+
+ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+
+MIDDLEWARE = [
+    ...
+    'whitenoise.middleware.WhiteNoiseMiddleware' # whitenose
+]
+
+
+# This production code might break development mode, so we check whether we're in DEBUG mode
+if not DEBUG:
+    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+```
+
+**Try on local**
+
+```
+python -m gunicorn project_name.asgi:application -k uvicorn.workers.UvicornWorker
+```
+
+## Dark mode no flicker
+
+```py
+# myapp/context_processors.py
+
+def theme(request):
+    # Default to 'light' if cookie is missing
+    return {'theme': request.COOKIES.get('theme', 'light')}
+```
+
+
+```py
+# settings.py
+
+TEMPLATES = [
+    {
+        ...
+        'OPTIONS': {
+            'context_processors': [
+               ...
+                'homepage.context_processors.theme'
+            ],
+        },
+    },
+]
+```
+
+```html
+<!-- templates/base.html ->
+
+<html lang="en" class="{{theme}}">
+```
+
+```js
+// toogle function
+    
+document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
 ```

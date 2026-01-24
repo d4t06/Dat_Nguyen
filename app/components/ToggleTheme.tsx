@@ -1,38 +1,33 @@
 "use client";
 
-import { moonIcon, sunIcon } from "@/public/icon";
-import { useEffect } from "react";
-import { getLocalStorage, setLocalStorage } from "../utils/appHelper";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export default function ToggleTheme() {
-	const toggleDarkMode = (toggle: boolean) => {
-		if (toggle) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
+	const { setTheme, theme } = useTheme();
 
-		setLocalStorage("dark", toggle);
-	};
+	const [isMount, setIsMount] = useState(false);
 
 	useEffect(() => {
-		const isDark = getLocalStorage()["dark"];
-		if (isDark) document.documentElement.classList.add("dark");
+		if (!isMount) setIsMount(true);
 	}, []);
+
+	if (!isMount)
+		return (
+				<img className="w-7 inline-block" src="/images/sun.png" />
+		);
 
 	return (
 		<>
 			<button
-				onClick={() => toggleDarkMode(true)}
-				className="sun ml-3 hover:text-red-500 w-7"
+				onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+				className=""
 			>
-				<img className="w-7 inline-block mx-1" src="/images/sun.png" />
-			</button>
-			<button
-				onClick={() => toggleDarkMode(false)}
-				className="moon ml-3 hover:text-red-500 w-7"
-			>
-				<img className="w-7 inline-block mx-1" src="/images/moon.png" />
+				{theme === "light" ? (
+					<img className="w-7 inline-block" src="/images/sun.png" />
+				) : (
+					<img className="w-7 inline-block" src="/images/moon.png" />
+				)}
 			</button>
 		</>
 	);

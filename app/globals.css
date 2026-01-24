@@ -132,4 +132,12 @@ mark {
 
 .peer:checked ~ .sidebar-toggle > .xmark-icon {
     display: block;
-} 
+}
+
+code:before {
+  content: none !important;
+}
+
+code:after {
+  content: none !important;
+}

@@ -1,16 +1,85 @@
 import Frame from "./_components/Frame";
 
+function Command({ text }: { text: string }) {
+	return (
+		<p>
+			<span className="text-purple-400">
+				datnguyen
+				<span className="text-green-400"> (master) $ </span>
+			</span>
+			<span className="text-white">{" " + text}</span>
+		</p>
+	);
+}
+
 export default function AboutPage() {
 	return (
 		<div className="page md:w-3/4 mx-auto mt-10 space-y-10 md:space-y-24 text-white">
 			<Frame>
-				<p>
-					<span className="text-purple-400">
-						datnguyen
-						<span className="text-green-400"> (master) $ </span>
-					</span>
-					<span className="text-white"> cat about</span>
-				</p>
+				<Command text="neofetch" />
+				<br />
+				<div className="flex text-base">
+					<div>
+						<pre>
+							{" "}
+							_____{"       "}_______
+							<br />|{"  "}__ \{"   "}/\|__{"   "}__|
+							<br />| |{"  "}| | / \ | | |
+							<br />| |{"  "}| |/ /\ \ | |
+							<br />
+							| |__| / ____ \| |
+							<br />
+							|_____/_/{"    "}\_\_|
+						</pre>
+					</div>
+
+					<div className="ml-5 [&_span]:text-blue-600">
+						<p className="text-blue-600">datnh@192</p>
+						<p>-----</p>
+
+						<p>
+							<span>Full Name</span>: Nguyen Huu Dat
+						</p>
+						<p>
+							<span>Up Time</span>: 23 years
+						</p>
+						<p>
+							<span>Education</span>: Can Tho University
+						</p>
+						<p>
+							<span>YOE</span>: Fresher
+						</p>
+						<p>
+							<span>Location</span>: An Giang, Viet Nam
+						</p>
+						<p>
+							<span>OS</span>: Fedora Linux 42 + Windows 10
+						</p>
+						<br />
+
+						<div className="flex [&_div]:w-5 [&_div]:h-5">
+							<div className=" bg-red-600"></div>
+							<div className=" bg-green-600"></div>
+							<div className=" bg-yellow-600"></div>
+							<div className=" bg-blue-600"></div>
+							<div className=" bg-purple-600"></div>
+							<div className=" bg-cyan-600"></div>
+							<div className=" bg-gray-200"></div>
+						</div>
+						<div className="flex [&_div]:w-5 [&_div]:h-5">
+							<div className=" bg-red-400"></div>
+							<div className=" bg-green-400"></div>
+							<div className=" bg-yellow-400"></div>
+							<div className=" bg-blue-400"></div>
+							<div className=" bg-purple-400"></div>
+							<div className=" bg-cyan-400"></div>
+							<div className=" bg-white"></div>
+						</div>
+					</div>
+				</div>
+			</Frame>
+			<Frame>
+				<Command text="cat about" />
 
 				<br />
 				<p className="text-white leading-[1.5]">
@@ -37,16 +106,11 @@ export default function AboutPage() {
 			</Frame>
 
 			<Frame>
-				<p>
-					<span className="text-purple-400">
-						datnguyen
-						<span className="text-green-400"> (master) $ </span>
-					</span>
-					<span className="text-white"> cat overview</span>
-				</p>
+				<Command text="cat overview" />
+
 				<br />
 				<ul className="list-disc ml-6 [&_li]:mt-4">
-					<li>Proficiency in linux distros: Ubuntu, Fedora</li>
+					<li>Proficiency in linux distros: Ubuntu, Fedora, CentOS</li>
 					<li>Strengths: Front-end and Back-end web application development</li>
 					<li>
 						Familiarity with TypeScript and newer specifications of EcmaScript
@@ -57,13 +121,8 @@ export default function AboutPage() {
 			</Frame>
 
 			<Frame>
-				<p>
-					<span className="text-purple-400">
-						datnguyen
-						<span className="text-green-400"> (master) $ </span>
-					</span>
-					<span className="text-white">cat education</span>
-				</p>
+				<Command text="cat education" />
+
 				<br />
 				<p className="text-purple-400">8/2021 - 12/2025 </p>
 				<br />
@@ -73,13 +132,8 @@ export default function AboutPage() {
 			</Frame>
 
 			<Frame>
-				<p>
-					<span className="text-purple-400">
-						datnguyen
-						<span className="text-green-400"> (master) $ </span>
-					</span>
-					<span className="text-white">cat work-experiences</span>
-				</p>
+				<Command text="cat work-experiences" />
+
 				<br />
 
 				<p className="text-purple-400">04/2023 - 10/2023 </p>
@@ -92,13 +146,8 @@ export default function AboutPage() {
 			</Frame>
 
 			<Frame>
-				<p>
-					<span className="text-purple-400">
-						datnguyen
-						<span className="text-green-400"> (master) $ </span>
-					</span>
-					<span className="text-white">cat skills-tools</span>
-				</p>
+				<Command text="cat skills-tools" />
+
 				<br />
 				<p className="text-purple-400">Proficient In </p>
 				<br />

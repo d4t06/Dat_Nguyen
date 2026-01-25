@@ -5,7 +5,7 @@ function Command({ text }: { text: string }) {
 		<p>
 			<span className="text-purple-400">
 				datnguyen
-				<span className="text-green-400"> (master) $ </span>
+				<span className="text-green-400"> (master) ~$ </span>
 			</span>
 			<span className="text-white">{" " + text}</span>
 		</p>
@@ -18,23 +18,21 @@ export default function AboutPage() {
 			<Frame>
 				<Command text="neofetch" />
 				<br />
-				<div className="flex text-base">
-					<div>
-						<pre>
-							{" "}
-							_____{"       "}_______
-							<br />|{"  "}__ \{"   "}/\|__{"   "}__|
-							<br />| |{"  "}| | / \ | | |
-							<br />| |{"  "}| |/ /\ \ | |
-							<br />
-							| |__| / ____ \| |
-							<br />
-							|_____/_/{"    "}\_\_|
-						</pre>
-					</div>
+				<div className="flex flex-wrap gap-5">
+					<pre className="">
+						{" "}
+						_____{"       "}_______
+						<br />|{"  "}__ \{"   "}/\|__{"   "}__|
+						<br />| |{"  "}| | /{"  "}\{"  "}| |
+						<br />| |{"  "}| |/ /\ \ | |
+						<br />
+						| |__| / ____ \| |
+						<br />
+						|_____/_/{"    "}\_\_|
+					</pre>
 
-					<div className="ml-5 [&_span]:text-blue-600">
-						<p className="text-blue-600">datnh@192</p>
+					<div className="[&_span]:text-blue-600">
+						<p className="text-blue-600"> datnguyen@192</p>
 						<p>-----</p>
 
 						<p>
@@ -44,16 +42,33 @@ export default function AboutPage() {
 							<span>Up Time</span>: 23 years
 						</p>
 						<p>
-							<span>Education</span>: Can Tho University
-						</p>
-						<p>
 							<span>YOE</span>: Fresher
 						</p>
 						<p>
 							<span>Location</span>: An Giang, Viet Nam
 						</p>
 						<p>
+							<span>Education</span>: Can Tho University
+						</p>
+
+						<p>
 							<span>OS</span>: Fedora Linux 42 + Windows 10
+						</p>
+						<p>
+							<span>Host</span>: datnh0708@gmail.com
+						</p>
+						<p>
+							<span>CV</span>:{" "}
+							<a
+								href="https://raw.githubusercontent.com/d4t06/Dat_Nguyen_Resource/master/Nguyen_Huu_Dat_cv.pdf"
+								target="_blank"
+								className="underline"
+							>
+								here
+							</a>
+						</p>
+						<p>
+							<span>Hobbies</span>: Coffee, music, badminton, bikes 
 						</p>
 						<br />
 
@@ -78,9 +93,8 @@ export default function AboutPage() {
 					</div>
 				</div>
 			</Frame>
-			<Frame>
+			{/*<Frame>
 				<Command text="cat about" />
-
 				<br />
 				<p className="text-white leading-[1.5]">
 					Hello! I&apos;m Nguyen Huu Dat, a fresher developer from Viet Nam
@@ -103,7 +117,7 @@ export default function AboutPage() {
 						my CV
 					</a>
 				</p>
-			</Frame>
+			</Frame>*/}
 
 			<Frame>
 				<Command text="cat overview" />

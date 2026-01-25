@@ -53,7 +53,7 @@ export default function Home() {
                      className="w-6 md:w-7 lg:w-8 inline-block"
                      src="/images/heart_start.png"
                   />
-                  JavaScript, Tech Gears
+                  JavaScript, React
                </p>
                <p>
                   <img
